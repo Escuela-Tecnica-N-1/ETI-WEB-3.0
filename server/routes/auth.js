@@ -1,5 +1,9 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
+
+const crypto = require('crypto');
+const { enviarMailVerificacion } = require('../services/emailService');
+
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -18,17 +22,30 @@ router.post('/register', async (req, res) => {
     }
 
     const contrasenaHasheada = await bcrypt.hash(contrasena, 10);
+    const tokenVerificacion = crypto.randomBytes(32).toString('hex');
+    const tokenVerificacionExpira = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24hs
+
     const hayUsuarios = await User.findOne();
+    const datosUsuario = {
+      nombre,
+      email,
+      contrasena: contrasenaHasheada,
+      tokenVerificacion,
+      tokenVerificacionExpira
+    };
+
     if (!hayUsuarios) {
-      const nuevoUser = new User({ nombre, email, contrasena: contrasenaHasheada, roles: ['admin', 'profesor'] });
-      await nuevoUser.save();
-    } else {
-      const nuevoUser = new User({ nombre, email, contrasena: contrasenaHasheada });
-      await nuevoUser.save();
+      datosUsuario.roles = ['admin', 'profesor'];
     }
-    
-    res.status(201).json({ success: true, message: 'Registro exitoso' });
+
+    const nuevoUser = new User(datosUsuario);
+    await nuevoUser.save();
+
+    await enviarMailVerificacion(email, tokenVerificacion);
+
+    res.status(201).json({ success: true, message: 'Registro exitoso. Revisá tu email para verificar tu cuenta.' });
   } catch (error) {
+    console.error('Error en registro:', error);
     res.status(500).json({ success: false, message: 'Error al registrar usuario' });
   }
 });
@@ -46,6 +63,10 @@ router.post('/login', async (req, res) => {
     const match = await bcrypt.compare(contrasena, usuario.contrasena);
     if (!match) {
       return res.status(401).json({ success: false, message: 'Credenciales inválidas' });
+    }
+
+    if (!usuario.verificado) {
+      return res.status(403).json({ success: false, message: 'Debés verificar tu email antes de ingresar' });
     }
 
     const token = jwt.sign(
@@ -70,6 +91,35 @@ router.post('/login', async (req, res) => {
   } catch (error) {
     // console.error('Error en login:', error);  Para ver si salta algún error en el login
     res.status(500).json({ success: false, message: 'Error del servidor' });
+  }
+});
+
+router.get('/verify', async (req, res) => {
+  const { token } = req.query;
+
+  if (!token) {
+    return res.status(400).json({ success: false, message: 'Token no provisto' });
+  }
+
+  try {
+    const usuario = await User.findOne({
+      tokenVerificacion: token,
+      tokenVerificacionExpira: { $gt: new Date() }
+    });
+
+    if (!usuario) {
+      return res.status(400).json({ success: false, message: 'Token inválido o expirado' });
+    }
+
+    usuario.verificado = true;
+    usuario.tokenVerificacion = undefined;
+    usuario.tokenVerificacionExpira = undefined;
+    await usuario.save();
+
+    res.json({ success: true, message: 'Cuenta verificada correctamente' });
+  } catch (error) {
+    console.error('Error en verificación:', error);
+    res.status(500).json({ success: false, message: 'Error al verificar la cuenta' });
   }
 });
 
