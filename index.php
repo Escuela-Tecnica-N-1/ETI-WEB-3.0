@@ -181,11 +181,13 @@ crossorigin=""></script>
                             <i class="fas fa-newspaper"></i>
                             <h2>Últimas Noticias</h2>
                         </div>
+
                         <div class="news-list" id="news-container">
                             <!-- News items will be inserted here by JavaScript -->
                         </div>
-                        <a href="noticias.php" class="news-link">Ver todas las noticias <i class="fas fa-chevron-right"></i></a>
+
                     </div>
+
                 </div>
             </div>
         </section>

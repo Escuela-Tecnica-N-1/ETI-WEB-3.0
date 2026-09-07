@@ -74,5 +74,7 @@
 
         <?php include 'footer.php'; ?>
     </main>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

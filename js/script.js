@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Sample news data - this would typically come from a CMS or API
+
+    // Define las noticias que se mostrarán dinámicamente en la sección de novedades.
     const latestNews = [
         {
             id: 1,
@@ -21,52 +22,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
-    // Populate news section
+
+    // Busca el contenedor de noticias y crea automáticamente una tarjeta por cada noticia.
     const newsContainer = document.getElementById('news-container');
-    
+
     latestNews.forEach(news => {
         const newsItem = document.createElement('div');
+
         newsItem.className = 'news-item';
-        
         newsItem.innerHTML = `
             <div class="news-item-header">
                 <h3>${news.title}</h3>
                 <div class="date">${news.date}</div>
             </div>
+
             <div class="news-item-content">
                 <p>${news.excerpt}</p>
-                <a href="#" class="news-link">Leer más <i class="fas fa-chevron-right"></i></a>
+                <a href="#" class="news-link">
+                    Leer más <i class="fas fa-chevron-right"></i>
+                </a>
             </div>
         `;
-        
+
         newsContainer.appendChild(newsItem);
     });
 
-    // Set current year in footer
+
+    // Obtiene el año actual del sistema y lo coloca automáticamente en el pie de página.
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Add hover effects to modality cards
-    const modalityCards = document.querySelectorAll('.modality-card');
-    
-    modalityCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Add smooth scrolling for anchor links
+    // Hace que los enlaces de anclaje se desplacen suavemente hasta la sección correspondiente en lugar de saltar directamente.
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            
             const targetId = this.getAttribute('href');
+
             if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
+                const targetElement = document.querySelector(targetId);
+
             if (targetElement) {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
@@ -75,4 +68,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
