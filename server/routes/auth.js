@@ -23,7 +23,7 @@ router.post('/register', async (req, res) => {
       const nuevoUser = new User({ nombre, email, contrasena: contrasenaHasheada, roles: ['admin', 'profesor'] });
       await nuevoUser.save();
     } else {
-      const nuevoUser = new User({ nombre, email, contrasena: contrasenaHasheada, roles: ['alumno'] });
+      const nuevoUser = new User({ nombre, email, contrasena: contrasenaHasheada });
       await nuevoUser.save();
     }
     
