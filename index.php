@@ -43,39 +43,39 @@
     <main>
         <!-- Welcome Section -->
         <section class="welcome-section">
-    <div class="container">
-        <div class="welcome-grid">
-            <div class="welcome-content">
-                <h1>Bienvenidos a nuestra <br> Escuela Técnica <br> Gral. Manuel Belgrano</h1>
+            <div class="container">
+                <div class="welcome-grid">
+                    <div class="welcome-content">
+                        <h1>Bienvenidos a nuestra <br> Escuela Técnica <br> Gral. Manuel Belgrano</h1>
 
-                <p>
-                    Formando profesionales con excelencia académica y valores humanos
-                    para construir un futuro mejor.
-                </p>
+                        <p>
+                            Formando profesionales con excelencia académica y valores humanos
+                            para construir un futuro mejor.
+                        </p>
 
-                <div class="button-group">
-                    <a href="conocemas.php">
-                        <button class="btn btn-primary">
-                            Conoce más sobre nosotros
-                        </button>
-                    </a>
+                        <div class="button-group">
+                            <a href="conocemas.php">
+                                <button class="btn btn-primary" id="conocemas-button">
+                                    Conoce más sobre nosotros
+                                </button>
+                            </a>
 
-                    <a href="#redirect-contacto">
-                        <button class="btn btn-outline">
-                            Contacto
-                        </button>
-                    </a>
+                            <a href="#redirect-contacto">
+                                <button class="btn btn-outline">
+                                    Contacto
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="welcome-image">
+                        <img src="imagenes/escuelafoto.jpeg"
+                            alt="Escuela Técnica"
+                            id="fotoEsc">
+                    </div>
                 </div>
             </div>
-
-            <div class="welcome-image">
-                <img src="imagenes/escuelafoto.jpeg"
-                     alt="Escuela Técnica"
-                     id="fotoEsc">
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!--ESTADISTICAS-->
 <section class="stats-section">
