@@ -30,8 +30,8 @@
                     <a href="https://www.instagram.com/escuela_tecnica_lasflores?igsh=MTlyc2o3em5nMGxmOQ" class="social-link"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="footer-col">
-                <img src="imagenes/placeholder1.png" alt="">
+            <div class="footer-col footer-col-robot">
+                <img class="robot" src="imagenes/placeholder1.png" alt="">
             </div>
         </div>
         <div class="footer-bottom">

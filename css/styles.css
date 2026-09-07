@@ -763,10 +763,6 @@ footer {
     .modalities-grid {
         grid-template-columns: 1fr 1fr;
     }
-
-    .footer-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 
 @media (max-width: 991px) {
@@ -793,11 +789,5 @@ footer {
     
     .logo h1 {
         font-size: 1.25rem;
-    }
-}
-
-@media (min-width: 768px) {
-    .footer-grid {
-        grid-template-columns: repeat(4, 1fr);
     }
 }
