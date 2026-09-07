@@ -100,6 +100,7 @@ header {
     margin: 0;
 }
 
+<<<<<<< Updated upstream
 .search-container {
     display: flex;
     align-items: center;
@@ -123,6 +124,9 @@ header {
 .search-button i {
     color: var(--primary-dark);
 }
+=======
+
+>>>>>>> Stashed changes
 
 /* Mobile menu button - Only visible on mobile */
 .mobile-menu {
