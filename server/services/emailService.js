@@ -40,7 +40,7 @@ async function enviarMailVerificacion(destinatario, token) {
 
     const cuerpoHtml = `
         <p>Hola,</p>
-        <p>Gracias por registrarte en la Escuela Técnica Gral. Manuel Belgrano.</p>
+        <p>Gracias por registrarte en la Escuela Técnica N°1.</p>
         <p>Para activar tu cuenta, hacé click en el siguiente link:</p>
         <p><a href="${linkVerificacion}">${linkVerificacion}</a></p>
         <p>Este link expira en 24 horas.</p>
@@ -48,7 +48,7 @@ async function enviarMailVerificacion(destinatario, token) {
 
     const raw = construirMensaje({
         destinatario,
-        asunto: 'Verificá tu cuenta - Escuela Belgrano',
+        asunto: 'Verifica tu cuenta - Escuela Tecnica',
         cuerpoHtml
     });
 
