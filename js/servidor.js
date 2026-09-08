@@ -68,3 +68,52 @@ form.addEventListener('submit', async (e) => {
     mensaje.style.color = 'red';
   }
 });
+
+// ─── "Olvidé mi contraseña" ──────────────────────────────────────────
+// Reutiliza los mismos elementos del modal (toggle-forgot, forgot-form,
+// volver-login) que hay que agregar al HTML del modal de login.
+
+const toggleForgot = document.getElementById('toggle-forgot');
+const forgotForm = document.getElementById('forgot-form');
+const volverLogin = document.getElementById('volver-login');
+const mensajeForgot = document.getElementById('mensaje-forgot');
+
+toggleForgot.addEventListener('click', () => {
+  form.style.display = 'none';
+  toggle.style.display = 'none';
+  toggleForgot.style.display = 'none';
+  forgotForm.style.display = 'block';
+  volverLogin.style.display = 'block';
+  mensaje.textContent = '';
+});
+
+volverLogin.addEventListener('click', () => {
+  forgotForm.style.display = 'none';
+  form.style.display = 'block';
+  toggle.style.display = 'block';
+  toggleForgot.style.display = 'block';
+  volverLogin.style.display = 'none';
+  mensajeForgot.textContent = '';
+});
+
+forgotForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById('forgot-email').value.trim();
+
+  try {
+    const res = await fetch('/api/forgot-password', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+
+    const data = await res.json();
+    mensajeForgot.textContent = data.message;
+    mensajeForgot.style.color = data.success ? 'green' : 'red';
+  } catch (err) {
+    console.error(err);
+    mensajeForgot.textContent = 'Error de conexión con el servidor.';
+    mensajeForgot.style.color = 'red';
+  }
+});
