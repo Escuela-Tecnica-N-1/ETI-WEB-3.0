@@ -8,21 +8,7 @@ const File = require('../models/File');
 const router = express.Router();
 
 // verificacion token JWT
-const authenticateToken = (req, res, next) => {
-  const token = req.cookies.token;
-
-  if (!token) {
-    return res.status(401).json({ success: false, message: 'Token requerido' });
-  }
-
-  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-    if (err) {
-      return res.status(403).json({ success: false, message: 'Token inválido' });
-    }
-    req.user = user;
-    next();
-  });
-};
+const authenticateToken = require('../middlewares/authenticateToken');
 
 // Esto es la verificacion de roles
 const verificarRol = (rolesPermitidos) => {
