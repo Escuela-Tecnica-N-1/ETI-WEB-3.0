@@ -11,28 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-        <header>
-            <div class="container">
-                <div class="header-content">
-                    <div class="logo">
-                        <a href="index.php">
-                            <img src="imagenes/escudo.png" alt="Escudo de la Escuela Técnica">
-                            <h1>Escuela Técnica N°1</h1>
-                        </a>
-                    </div>
-                    <div class="search-container">
-                        <input type="text" placeholder="Buscar..." class="search-input">
-                        <button class="search-button"><i class="fas fa-search"></i></button>
-                    </div>
-                    <div class="mobile-menu">
-                        <button class="menu-button" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-                    </div>
-                </div>
-            </div>
-        </header>
-            <!-- Desktop Navigation -->
-        <?php include 'header.php'; ?>
+
+    <?php include 'header.php'; ?>
+
+    <?php include 'navbar.php'; ?>
+
 </body>
     <main>
         <div class="container">
@@ -58,7 +41,7 @@
                         <div class="modality-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h3>Técnico en Informática</h3>
+                        <h3>Técnico en Informática Personal y Profesional</h3>
                         <p>Forma profesionales capacitados en el desarrollo de software, redes informáticas, y mantenimiento de
                             sistemas computacionales.</p>
                         <ul>
@@ -88,7 +71,7 @@
         </section>
  
         </div>
-        <!-- Desktop Navigation -->
+
         <?php include 'footer.php'; ?>
     </main>
 </body>

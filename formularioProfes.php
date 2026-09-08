@@ -46,7 +46,7 @@
                 <i class="fas fa-book"></i> Materia *
               </label>
               <select name="category" id="materia" required>
-                <option value="">Seleccionar materia</option>
+                <option value="" selected disabled >Seleccionar materia</option>
                 <option value="matematicas">Matemáticas</option>
                 <option value="lengua">Lengua y Literatura</option>
                 <option value="ciencias">Ciencias Naturales</option>
@@ -72,7 +72,7 @@
                 <i class="fas fa-calendar-alt"></i> Año *
               </label>
               <select name="año" id="año" required>
-                <option value="">Seleccionar año</option>
+                <option value="" selected disabled>Seleccionar año</option>
                 <option value="1">1° Año</option>
                 <option value="2">2° Año</option>
                 <option value="3">3° Año</option>
@@ -151,28 +151,19 @@
     formData.append('file', document.getElementById('archivo').files[0]);
     formData.append('description', document.getElementById('descripcion').value);
     formData.append('category', document.getElementById('materia').value);
-    formData.append('year', document.getElementById('año').value);
+    formData.append('anio', document.getElementById('año').value);
     formData.append('taskName', document.getElementById('nombreTarea').value);
 
-    const token = localStorage.getItem('token');
     const mensaje = document.getElementById('mensaje');
 
-    if (!token) {
-      mensaje.innerText = 'Debe iniciar sesión para subir archivos.';
-      return;
-    }
-
     try {
-      const response = await fetch('http://localhost:3000/api/upload', {
+      const response = await fetch('/api/upload', {
         method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`
-        },
+        credentials: 'include',
         body: formData
       });
 
       const result = await response.json();
-
       if (result.success) {
         mensaje.style.color = 'green';
         mensaje.innerText = 'Archivo subido exitosamente.';

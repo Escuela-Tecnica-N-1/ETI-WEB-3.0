@@ -12,22 +12,22 @@ let esRegistro = false;
 
 function logina(){
   esRegistro = !esRegistro;
-  
+
   // Actualizar el título del formulario si existe
   if (formTitle) {
     formTitle.textContent = esRegistro ? 'Registro de Profesor' : 'Iniciar Sesión';
   }
-  
+
   // Mostrar u ocultar el campo de nombre
   nombreInput.style.display = esRegistro ? 'block' : 'none';
   // 👈 ESTA LÍNEA ES LA CLAVE
   nombreInput.required = esRegistro;
   // Actualizar texto del botón
   button.textContent = esRegistro ? 'Registrarse' : 'Ingresar';
-  
+
   // Actualizar el texto del enlace para cambiar entre registro/login
   toggle.innerHTML = `<p>${esRegistro ? '¿Ya tienes cuenta? Iniciar sesión' : '¿No tienes cuenta? Registrate'}</p>`;
-  
+
   // Limpiar mensajes de error/éxito
   mensaje.textContent = '';
 };
@@ -42,9 +42,10 @@ form.addEventListener('submit', async (e) => {
   const payload = esRegistro ? { nombre, email, contrasena } : { email, contrasena };
 
   try {
-    const res = await fetch(`http://localhost:3000/api/${endpoint}`, {
+    const res = await fetch(`/api/${endpoint}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify(payload)
     });
 
@@ -55,8 +56,7 @@ form.addEventListener('submit', async (e) => {
       mensaje.style.color = 'green';
 
       if (!esRegistro) {
-        localStorage.setItem('token', data.token);
-        window.location.href = 'interfazProfe.php';
+        window.location.href = 'index.php';
       }
     } else {
       mensaje.textContent = data.message || 'Ocurrió un error.';

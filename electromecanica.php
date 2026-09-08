@@ -11,26 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head> 
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <a href="index.php">
-                        <img src="imagenes/escudo.png" alt="Escudo de la Escuela Técnica">
-                        <h1>Escuela Técnica N°1</h1>
-                    </a>
-                </div>
-                <div class="search-container">
-                    <input type="text" placeholder="Buscar..." class="search-input">
-                    <button class="search-button"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <!-- Desktop Navigation -->
-        <?php include 'header.php'; ?>
+    <?php include 'header.php'; ?>
+
+    <?php include 'navbar.php'; ?>
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobile-nav">
@@ -86,10 +70,8 @@
         </div>
     </div>
 
-    <!-- Main Content -->
     <main>
         <div class="container">
-            <!-- Introduction Section -->
             <section class="intro-section">
                 <div class="section-header">
                     <h2>División Electromecánica</h2>
@@ -100,14 +82,12 @@
                 </div>
             </section>
 
-            <!-- Subjects Section -->
             <section class="subjects-section">
                 <div class="section-header">
                     <h2>Materias Específicas</h2>
                 </div>
                 
                 <div class="subjects-grid">
-                    <!-- Subject 1 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes/electro/Electro Técnica y Electrónica.jpg" alt="Electrotecnia">
@@ -118,7 +98,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 2 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes/electro/Mecanica y Mecanismo.jpg" alt="Mecánica Técnica">
@@ -129,7 +108,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 3 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes/electro/Maquinas Electricas y Automatismo.jpg" alt="Máquinas Eléctricas">
@@ -140,7 +118,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 4 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes/electro/Emprendimientos Productivos y de Desarrollo Industrial.jpg" alt="Automatización Industrial">
@@ -151,7 +128,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 5 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes/electro/Mantenimiento y Montaje Eléctrico.webp" alt="Instalaciones Eléctricas">
@@ -162,7 +138,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 6 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes/electro/Electrónica Industrial.webp" alt="Electrónica Industrial">
@@ -172,8 +147,6 @@
                             <p>Aplicación de dispositivos y circuitos electrónicos en entornos industriales. Incluye el estudio de semiconductores, circuitos integrados, sistemas de control y potencia electrónica.</p>
                         </div>
                     </div>
-
-                    <!-- Subject 7 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes/electro/Resistencia y Enseñanza de los Materiales.jpg" alt="Resistencia y Enseñanza de los Materiales">
@@ -184,7 +157,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 8 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes/electro/Mediciones Electricas.jpeg" alt="Sistemas de Control">
@@ -195,7 +167,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 9 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes/electro/Diseño y Procesamiento Mecanico.jpg" alt="Mantenimiento Industrial">
@@ -206,7 +177,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 10 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes/electro/diseño_cad.jpg" alt="Diseño Asistido por Computadora">
@@ -217,7 +187,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 11 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes/electro/Laboratorio de Mediciones y de Control de Calidad.jpg" alt="Procesos de Manufactura">
@@ -228,7 +197,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 12 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes/electro/Práctica Profesional del Sector Electromecánico.jpg" alt="Practicas Profesionalizantes">
@@ -241,7 +209,6 @@
                 </div>
             </section>
 
-            <!-- Career Prospects Section -->
             <section class="career-section">
                 <div class="section-header">
                     <h2>Salida Laboral</h2>
@@ -262,7 +229,7 @@
     </main>
 
     <!-- Footer -->
-    <?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?>
 
     <script>
         // Set current year in footer

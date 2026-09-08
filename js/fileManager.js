@@ -1,7 +1,6 @@
 class FileManager {
   constructor() {
-    this.baseURL = 'http://localhost:3000/api';
-    this.token = localStorage.getItem('token');
+    this.baseURL = '/api';
     this.init();
   }
 
@@ -174,9 +173,7 @@ class FileManager {
 
     const response = await fetch(`${this.baseURL}/upload`, {
       method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${this.token}`
-      },
+      credentials: 'include',
       body: formData
     });
 
@@ -190,9 +187,7 @@ class FileManager {
   async loadFiles() {
     try {
       const response = await fetch(`${this.baseURL}/files`, {
-        headers: {
-          'Authorization': `Bearer ${this.token}`
-        }
+        credentials: 'include'
       });
 
       if (response.ok) {
@@ -253,9 +248,7 @@ class FileManager {
   async downloadFile(fileId) {
     try {
       const response = await fetch(`${this.baseURL}/download/${fileId}`, {
-        headers: {
-          'Authorization': `Bearer ${this.token}`
-        }
+        credentials: 'include'
       });
 
       if (response.ok) {
@@ -280,9 +273,7 @@ class FileManager {
     try {
       const response = await fetch(`${this.baseURL}/files/${fileId}`, {
         method: 'DELETE',
-        headers: {
-          'Authorization': `Bearer ${this.token}`
-        }
+        credentials: 'include'
       });
 
       if (response.ok) {
@@ -306,9 +297,7 @@ class FileManager {
   async loadFilesByCategory(category) {
     try {
       const response = await fetch(`${this.baseURL}/files/category/${category}`, {
-        headers: {
-          'Authorization': `Bearer ${this.token}`
-        }
+        credentials: 'include'
       });
 
       if (response.ok) {

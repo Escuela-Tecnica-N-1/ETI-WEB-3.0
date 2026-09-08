@@ -11,31 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <a href="index.php">
-                        <img src="imagenes/escudo.png" alt="Escudo de la Escuela Técnica">
-                        <h1>Escuela Técnica N°1</h1>
-                    </a>
-                </div>
-                <div class="search-container">
-                    <input type="text" placeholder="Buscar..." class="search-input">
-                    <button class="search-button"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="mobile-menu">
-                    <button class="menu-button" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-                </div>
-            </div>
-        </div>
-    </header>
-        <!-- Desktop Navigation -->
+
     <?php include 'header.php'; ?>
+
+    <?php include 'navbar.php'; ?>
+
     <main>
         <div class="container">
-            <!-- Introduction Section -->
             <section class="intro-section">
                 <div class="section-header">
                     <h2>Ciclo Básico</h2>
@@ -46,14 +28,12 @@
                 </div>
             </section>
 
-            <!-- Subjects Section -->
             <section class="subjects-section">
                 <div class="section-header">
                     <h2>Materias Específicas</h2>
                 </div>
                 
                 <div class="subjects-grid">
-                    <!-- Subject 1 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes\ciclobasico\carpinteria.jpg" alt="Carpintería">
@@ -64,7 +44,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 2 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes\ciclobasico\hojalateria.png" alt="Hojalatería">
@@ -75,7 +54,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 3 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes\ciclobasico\herreria.jpg" alt="Herrería">
@@ -86,7 +64,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 4 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes\ciclobasico\vitrofusion.png" alt="Vitrofusión">
@@ -97,7 +74,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 5 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes\ciclobasico\soldadura de estaño.jpg" alt="Electricidad">
@@ -108,7 +84,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 6 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes\ciclobasico\lenguaje_tecnologico.png" alt="Lenguaje Tecnológico">
@@ -119,7 +94,6 @@
                         </div>
                     </div>
 
-                    <!-- Subject 7 -->
                     <div class="subject-card">
                         <div class="subject-image">
                             <img src="imagenes\ciclobasico\dibujo_tecnico.pfgvuow<hgv+0t ng" alt="Dibujo Técnico">
@@ -130,7 +104,7 @@
                         </div>
                     </div>
     </main>
-    <!-- Desktop Navigation -->
+
     <?php include 'footer.php'; ?>
 </body>
 </html>
