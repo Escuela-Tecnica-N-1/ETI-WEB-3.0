@@ -7,28 +7,22 @@
           <h1>Escuela Técnica N°1</h1>
         </a>
       </div>
-<<<<<<< Updated upstream
-
-      <div class="search-container">
-        <input type="text" placeholder="Buscar..." class="search-input">
-        <button class="search-button"><i class="fas fa-search"></i></button>
-      </div>
-    </div>
-  </div>
-</header>
-=======
+<!--boton de acceso al menu de estudiantes-->
       <button aria-label="menu Desplegable" class="menu-header" id="menuHeader" aria-expanded="false" aria-controls="menuDesplegable">
         <img src="imagenes/usuario.png" alt="cuenta de usuario" class="ft-usuario">
       </button>
     </div>
   </div>
 </header>
+<!--oculta el menu-->
 <div id="overlay" tabindex="-1" class="overlay"></div>
   <div id="menuDesplegable" class="menu-principal">
-    <a href="roles.php" tabindex="-1">Materias</a>
-    <a href="roles.php" tabindex="-1">Configuracion</a>
+<!--links-->
+    <a href="rol-estudiante.php" tabindex="-1">Materias</a>
+    <a href="rol-estudiante.php" tabindex="-1">Configuracion</a>
   </div>
 <style>
+  /*cuando sea menor a 768,desaparece el boton para que aparezca el de celular*/
   @media (max-width:768px){
     .menu-header{
       display:none;
@@ -41,6 +35,7 @@
     cursor:pointer;
    
   }
+  /*foto de la cuenta del usuario(temporal)*/
   .ft-usuario{
     height: 30px;
     width: 30px;
@@ -75,10 +70,11 @@
   
 </style>
 <script>
+  //llama a las clases//
 const menuHeader = document.getElementById('menuHeader');
 const menuDesplegable = document.getElementById('menuDesplegable');
 const overlay = document.getElementById('overlay');
-
+//cuando haga click se activa o abre el menu//
 menuHeader.addEventListener('click', () => {
 
   menuDesplegable.classList.toggle('active');
@@ -89,7 +85,7 @@ menuHeader.addEventListener('click', () => {
   menuHeader.setAttribute('aria-expanded', abierto);
 
 });
-
+//cuando se vuelva a clickear se cierra//
 overlay.addEventListener('click', () => {
 
   menuDesplegable.classList.remove('active');
@@ -98,6 +94,4 @@ overlay.addEventListener('click', () => {
   menuHeader.setAttribute('aria-expanded', 'false');
 
 });
-
 </script>
->>>>>>> Stashed changes
