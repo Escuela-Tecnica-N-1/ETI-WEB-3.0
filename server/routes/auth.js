@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 
 const crypto = require('crypto');
-const { enviarMailVerificacion } = require('../services/emailService');
+const { enviarMailVerificacion, enviarMailReset } = require('../services/emailService');
 
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
@@ -120,6 +120,74 @@ router.get('/verify', async (req, res) => {
   } catch (error) {
     console.error('Error en verificación:', error);
     res.status(500).json({ success: false, message: 'Error al verificar la cuenta' });
+  }
+});
+
+// POST /forgot-password
+router.post('/forgot-password', async (req, res) => {
+  const { email } = req.body;
+
+  // Mensaje genérico SIEMPRE, exista o no el usuario.
+  // Evita que el endpoint sirva para averiguar qué emails están registrados.
+  const respuestaGenerica = {
+    success: true,
+    message: 'Si el email está registrado, vas a recibir un correo con instrucciones para restablecer tu contraseña.'
+  };
+
+  if (!email) {
+    return res.status(400).json({ success: false, message: 'El email es obligatorio' });
+  }
+
+  try {
+    const usuario = await User.findOne({ email });
+
+    if (!usuario) {
+      return res.json(respuestaGenerica);
+    }
+
+    const tokenReset = crypto.randomBytes(32).toString('hex');
+
+    usuario.tokenReset = tokenReset;
+    usuario.tokenResetExpira = new Date(Date.now() + 20 * 60 * 1000); // 20 minutos
+    await usuario.save();
+
+    await enviarMailReset(usuario.email, tokenReset);
+
+    res.json(respuestaGenerica);
+  } catch (error) {
+    console.error('Error en /forgot-password:', error);
+    res.status(500).json({ success: false, message: 'Error al procesar la solicitud' });
+  }
+});
+
+// POST /reset-password
+router.post('/reset-password', async (req, res) => {
+  const { token, nuevaContrasena } = req.body;
+
+  if (!token || !nuevaContrasena) {
+    return res.status(400).json({ success: false, message: 'Token y nueva contraseña son obligatorios' });
+  }
+
+  try {
+    const usuario = await User.findOne({
+      tokenReset: token,
+      tokenResetExpira: { $gt: new Date() }
+    });
+
+    if (!usuario) {
+      return res.status(400).json({ success: false, message: 'Token inválido o expirado' });
+    }
+
+    usuario.contrasena = await bcrypt.hash(nuevaContrasena, 10);
+    usuario.tokenReset = undefined;
+    usuario.tokenResetExpira = undefined;
+    usuario.passwordChangedAt = new Date(); // invalida JWTs viejos (ver authenticateToken)
+    await usuario.save();
+
+    res.json({ success: true, message: 'Contraseña actualizada correctamente' });
+  } catch (error) {
+    console.error('Error en /reset-password:', error);
+    res.status(500).json({ success: false, message: 'Error al restablecer la contraseña' });
   }
 });
 

@@ -5,21 +5,7 @@ const User = require('../models/User');
 const router = express.Router();
 
 // Middleware: verifica que el token sea válido
-const authenticateToken = (req, res, next) => {
-    const token = req.cookies.token;
-
-    if (!token) {
-        return res.status(401).json({ success: false, message: 'Token requerido' });
-    }
-
-    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-        if (err) {
-            return res.status(403).json({ success: false, message: 'Token inválido' });
-        }
-        req.user = user;
-        next();
-    });
-};
+const authenticateToken = require('../middlewares/authenticateToken');
 
 // Middleware: verifica que el usuario sea admin
 const soloAdmin = (req, res, next) => {

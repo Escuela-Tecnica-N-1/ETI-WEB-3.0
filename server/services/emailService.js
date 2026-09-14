@@ -58,4 +58,31 @@ async function enviarMailVerificacion(destinatario, token) {
     });
 }
 
-module.exports = { enviarMailVerificacion };
+async function enviarMailReset(destinatario, token) {
+    const oauth2Client = getOAuthClient();
+    const gmail = google.gmail({ version: 'v1', auth: oauth2Client });
+
+    const linkReset = `${process.env.FRONTEND_URL}/reset-password.php?token=${token}`;
+
+    const cuerpoHtml = `
+        <p>Hola,</p>
+        <p>Recibimos un pedido para restablecer tu contraseña en la Escuela Técnica N°1.</p>
+        <p>Si fuiste vos, hacé click en el siguiente link para elegir una nueva contraseña:</p>
+        <p><a href="${linkReset}">${linkReset}</a></p>
+        <p>Este link expira en 20 minutos. Si no fuiste vos, ignorá este correo — tu contraseña no va a cambiar.</p>
+    `;
+
+    const raw = construirMensaje({
+        destinatario,
+        asunto: 'Restablecé tu contraseña - Escuela Técnica',
+        cuerpoHtml
+    });
+
+    return gmail.users.messages.send({
+        userId: 'me',
+        requestBody: { raw }
+    });
+}
+
+
+module.exports = { enviarMailVerificacion, enviarMailReset };

@@ -96,6 +96,23 @@ if (!empty($_COOKIE['token'])) {
                     <p>¿No tienes cuenta? Registrate</p>
                 </div>
                 <p id="mensaje"></p>
+
+                <!-- link para ir al formulario de recuperación -->
+                <div class="switch" id="toggle-forgot">
+                    <p>¿Olvidaste tu contraseña?</p>
+                </div>
+
+                <p id="mensaje"></p>
+
+                <!-- formulario de "olvidé mi contraseña", oculto por defecto -->
+                <form id="forgot-form" style="display: none;">
+                    <input type="email" id="forgot-email" placeholder="Email" required>
+                    <button type="submit">Enviar link de recuperación</button>
+                </form>
+                <div class="switch" id="volver-login" style="display: none;">
+                    <p>Volver a iniciar sesión</p>
+                </div>
+                <p id="mensaje-forgot"></p>
             </div>
         </div>
     
