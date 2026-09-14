@@ -12,7 +12,7 @@ const userSchema = new Schema({
     verificado: { type: Boolean, default: false },  // true = ya confirmó su email.
     tokenVerificacion: { type: String }, // token random que se manda por mail.
     tokenVerificacionExpira: { type: Date }, // vence a las 24hs.
-
+    ultimoReenvioVerificacion: Date, // Este sirve para indicar cuando fue el último reenvio del gmail para verificar la cuenta
     // --- Recuperación de contraseña ("olvidé mi contraseña") ⬇️ ---
 
     // Mientras tokenReset no sea null y no haya expirado, hay un reset pendiente.
