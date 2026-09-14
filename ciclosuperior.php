@@ -67,6 +67,15 @@
                         <a href="electromecanica.php"><button class="btn btn-amber">Explorar Electromecánica</button></a>
                     </div>
                 </div>
+
+                <div class="subjects-grid subjects-grid-2">
+                    <div class="subject-card subject-card-2">
+                        <div class="subject-content subject-content-2">
+                            <h3>Practicas Profesionalizantes</h3>
+                            <p>Experiencia práctica en un entorno profesional relacionado con la orientación electromecánica, aplicando conocimientos teóricos adquiridos en situaciones reales.</p>
+                        </div>
+                    </div>
+                    
             </div>
         </section>
  

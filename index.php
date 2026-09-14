@@ -232,24 +232,24 @@ if (!empty($_COOKIE['token'])) {
                         <!-- Tu HTML donde quieres mostrar el mapa -->
                         <div id="mapa" style="width: 100%; height: 400px; border-radius: 10px;"></div>
 
-<!-- boton del mapa -->
-<a
-  class="map-btn-wrapper"
-  href="https://maps.app.goo.gl/aaeUxEye4HNBApg48"
-  target="_blank">
+                        <!-- boton del mapa -->
+                        <a
+                        class="map-btn-wrapper"
+                        href="https://maps.app.goo.gl/aaeUxEye4HNBApg48"
+                        target="_blank">
 
-  <span class="map-btn">Google Maps</span>
-  <span class="pinpoint"></span>
+                        <span class="map-btn">Google Maps</span>
+                        <span class="pinpoint"></span>
 
-</a>
+                        </a>
 
-<!-- Al final de tu body -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
-integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
-crossorigin=""></script>
+                        <!-- Al final de tu body -->
+                        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+                        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+                        crossorigin=""></script>
 
-<!-- Función de mapa -->
-<script src="js/script/mapa.js"></script>
+                        <!-- Función de mapa -->
+                        <script src="js/script/mapa.js"></script>
 
                     </div>
 
