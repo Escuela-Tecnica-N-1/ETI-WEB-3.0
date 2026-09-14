@@ -1,53 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-    // Define las noticias que se mostrarán dinámicamente en la sección de novedades.
-    const latestNews = [
-        {
-            id: 1,
-            title: "Inscripciones abiertas para el próximo año lectivo",
-            date: "10 de abril, 2025",
-            excerpt: "Las inscripciones para el próximo año lectivo ya están abiertas. No pierdas la oportunidad de formar parte de nuestra institución."
-        },
-        {
-            id: 2,
-            title: "Feria de ciencias y tecnología",
-            date: "5 de abril, 2025",
-            excerpt: "Nuestros estudiantes presentaron proyectos innovadores en la feria anual de ciencias y tecnología."
-        },
-        {
-            id: 3,
-            title: "Reconocimiento a nuestros docentes",
-            date: "28 de marzo, 2025",
-            excerpt: "El ministerio de educación reconoció a nuestros docentes por su excelencia académica."
-        }
-    ];
-
-
-    // Busca el contenedor de noticias y crea automáticamente una tarjeta por cada noticia.
-    const newsContainer = document.getElementById('news-container');
-
-    latestNews.forEach(news => {
-        const newsItem = document.createElement('div');
-
-        newsItem.className = 'news-item';
-        newsItem.innerHTML = `
-            <div class="news-item-header">
-                <h3>${news.title}</h3>
-                <div class="date">${news.date}</div>
-            </div>
-
-            <div class="news-item-content">
-                <p>${news.excerpt}</p>
-                <a href="#" class="news-link">
-                    Leer más <i class="fas fa-chevron-right"></i>
-                </a>
-            </div>
-        `;
-
-        newsContainer.appendChild(newsItem);
-    });
-
-
+    
     // Obtiene el año actual del sistema y lo coloca automáticamente en el pie de página.
     document.getElementById('current-year').textContent = new Date().getFullYear();
 

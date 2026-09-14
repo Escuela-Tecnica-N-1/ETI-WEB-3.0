@@ -151,31 +151,27 @@
                         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
                         crossorigin=""/>
 
-                        <!-- Tu HTML donde quieres mostrar el mapa -->
+                        <!-- HTML donde se muestra el mapa -->
                         <div id="mapa" style="width: 100%; height: 400px; border-radius: 10px;"></div>
 
-<!-- boton del mapa -->
-<a
-  class="map-btn-wrapper"
-  href="https://maps.app.goo.gl/aaeUxEye4HNBApg48"
-  target="_blank">
+                            <!-- boton del mapa -->
+                            <a class="map-btn-wrapper" href="https://maps.app.goo.gl/aaeUxEye4HNBApg48" target="_blank">
 
-  <span class="map-btn">Google Maps</span>
-  <span class="pinpoint"></span>
+                                <span class="map-btn">Google Maps</span>
+                                <span class="pinpoint"></span>
 
-</a>
+                            </a>
 
-<!-- Al final de tu body -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
-integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
-crossorigin=""></script>
+                            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+                            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+                            crossorigin=""></script>
 
-<!-- Función de mapa -->
-<script src="js/script/mapa.js"></script>
+                            <!-- Función de mapa -->
+                            <script src="js/script/mapa.js"></script>
 
-                    </div>
+                        </div>
 
-                    <!-- Latest News Section (Right Side) -->
+                    <!-- seccion de noticias ubicadas a la derecha -->
                     <div class="news-section">
                         <div class="news-header">
                             <i class="fas fa-newspaper"></i>
@@ -183,7 +179,7 @@ crossorigin=""></script>
                         </div>
 
                         <div class="news-list" id="news-container">
-                            <!-- News items will be inserted here by JavaScript -->
+                            <!-- Las noticias seran agregad mediante JavaScript -->
                         </div>
 
                     </div>
@@ -202,5 +198,6 @@ crossorigin=""></script>
     <script src="js/easteregg.js"></script>
     <script src="js/estadisticas.js"></script>
     <script src="js/script/parallax.js"></script>
+    <script src="js/script/obtenerNoticias.js"></script>
 </body>
 </html>
