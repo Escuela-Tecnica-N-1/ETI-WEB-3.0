@@ -12,63 +12,9 @@
 </head> 
 <body>
 
-    <?php include 'header.php'; ?>
+    <?php include '../../paginas/complementos/header.php'; ?>
 
-    <?php include 'navbar.php'; ?>
-
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav" id="mobile-nav">
-        <div class="mobile-nav-container">
-            <div class="mobile-nav-header">
-                <h3>Menú</h3>
-                <button class="mobile-nav-close" id="mobile-nav-close"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="mobile-nav-search">
-                <input type="text" placeholder="Buscar...">
-            </div>
-            <ul class="mobile-nav-menu">
-                <li class="mobile-nav-item">
-                    <a href="#" class="mobile-nav-link">Institucional</a>
-                    <button class="mobile-nav-toggle" data-target="institucional-dropdown"><i class="fas fa-chevron-down"></i></button>
-                    <ul class="mobile-nav-dropdown" id="institucional-dropdown">
-                        <li><a href="#">Autoridades</a></li>
-                        <li><a href="#">Información Administrativa</a></li>
-                        <li><a href="#">Acuerdo de convivencia</a></li>
-                        <li><a href="#">Profesores</a></li>
-                    </ul>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#" class="mobile-nav-link">Egresados</a>
-                    <button class="mobile-nav-toggle" data-target="egresados-dropdown"><i class="fas fa-chevron-down"></i></button>
-                    <ul class="mobile-nav-dropdown" id="egresados-dropdown">
-                        <li><a href="#">1970-1980</a></li>
-                        <li><a href="#">1981-1990</a></li>
-                        <li><a href="#">1991-2000</a></li>
-                        <li><a href="#">2001-2010</a></li>
-                        <li><a href="#">2011-2020</a></li>
-                        <li><a href="#">2021-2030</a></li>
-                    </ul>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#" class="mobile-nav-link">Talleres de Ciclo Básico</a>
-                    <button class="mobile-nav-toggle" data-target="talleres-dropdown"><i class="fas fa-chevron-down"></i></button>
-                    <ul class="mobile-nav-dropdown" id="talleres-dropdown">
-                        <li><a href="#">Hojalatería</a></li>
-                        <li><a href="#">Carpintería</a></li>
-                        <li><a href="#">Vitrofusión</a></li>
-                        <li><a href="#">Herrería</a></li>
-                        <li><a href="#">Fundición</a></li>
-                    </ul>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="informatica.php" class="mobile-nav-link">Informática</a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="electromecanica.php" class="mobile-nav-link">Electromecánica</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php include '../../paginas/complementos/navbar.php'; ?>
 
     <main>
         <div class="container">
