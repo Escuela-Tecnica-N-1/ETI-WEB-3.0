@@ -10,7 +10,7 @@ const button = form.querySelector('button');
 
 let esRegistro = false;
 
-function logina(){
+function logina() {
   esRegistro = !esRegistro;
 
   // Actualizar el título del formulario si existe
@@ -20,10 +20,8 @@ function logina(){
 
   // Mostrar u ocultar el campo de nombre
   nombreInput.style.display = esRegistro ? 'block' : 'none';
-  // 👈 ESTA LÍNEA ES LA CLAVE
   nombreInput.required = esRegistro;
-  // Actualizar texto del botón
-  button.textContent = esRegistro ? 'Registrarse' : 'Ingresar';
+  button.textContent = esRegistro ? 'Registrarse' : 'Ingresar';  // Actualizar texto del botón
 
   // Actualizar el texto del enlace para cambiar entre registro/login
   toggle.innerHTML = `<p>${esRegistro ? '¿Ya tienes cuenta? Iniciar sesión' : '¿No tienes cuenta? Registrate'}</p>`;
@@ -31,43 +29,6 @@ function logina(){
   // Limpiar mensajes de error/éxito
   mensaje.textContent = '';
 };
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const nombre = nombreInput.value.trim();
-  const email = emailInput.value.trim();
-  const contrasena = passwordInput.value.trim();
-
-  const endpoint = esRegistro ? 'register' : 'login';
-  const payload = esRegistro ? { nombre, email, contrasena } : { email, contrasena };
-
-  try {
-    const res = await fetch(`/api/${endpoint}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify(payload)
-    });
-
-    const data = await res.json();
-
-    if (data.success) {
-      mensaje.textContent = esRegistro ? 'Registro exitoso. Ahora puedes iniciar sesión.' : 'Inicio de sesión exitoso.';
-      mensaje.style.color = 'green';
-
-      if (!esRegistro) {
-        window.location.href = 'index.php';
-      }
-    } else {
-      mensaje.textContent = data.message || 'Ocurrió un error.';
-      mensaje.style.color = 'red';
-    }
-  } catch (err) {
-    console.error(err);
-    mensaje.textContent = 'Error de conexión con el servidor.';
-    mensaje.style.color = 'red';
-  }
-});
 
 // ─── "Olvidé mi contraseña" ──────────────────────────────────────────
 // Reutiliza los mismos elementos del modal (toggle-forgot, forgot-form,
@@ -115,5 +76,73 @@ forgotForm.addEventListener('submit', async (e) => {
     console.error(err);
     mensajeForgot.textContent = 'Error de conexión con el servidor.';
     mensajeForgot.style.color = 'red';
+  }
+});
+
+// Verificación y reenvio
+
+const reenviarBtn = document.getElementById('reenviar-verificacion');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const nombre = nombreInput.value.trim();
+  const email = emailInput.value.trim();
+  const contrasena = passwordInput.value.trim();
+
+  const endpoint = esRegistro ? 'register' : 'login';
+  const payload = esRegistro ? { nombre, email, contrasena } : { email, contrasena };
+
+  reenviarBtn.style.display = 'none'; // reset en cada intento
+
+  try {
+    const res = await fetch(`/api/${endpoint}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify(payload)
+    });
+
+    const data = await res.json();
+    console.log(data.noVerificado);
+    if (data.success) {
+      mensaje.textContent = esRegistro ? 'Registro exitoso. Ahora puedes iniciar sesión.' : 'Inicio de sesión exitoso.';
+      mensaje.style.color = 'green';
+
+      if (!esRegistro) {
+        window.location.href = 'index.php';
+      }
+    } else {
+      mensaje.textContent = data.message || 'Ocurrió un error.';
+      mensaje.style.color = 'red';
+
+      if (data.noVerificado) {
+        reenviarBtn.style.display = 'inline-block';
+      }
+    }
+  } catch (err) {
+    console.error(err);
+    mensaje.textContent = 'Error de conexión con el servidor.';
+    mensaje.style.color = 'red';
+  }
+});
+
+reenviarBtn.addEventListener('click', async () => {
+  const email = emailInput.value.trim();
+
+  try {
+    const res = await fetch('/api/resend-verification', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+
+    const data = await res.json();
+    mensaje.textContent = data.message;
+    mensaje.style.color = data.success ? 'green' : 'red';
+    reenviarBtn.style.display = 'none';
+  } catch (err) {
+    console.error(err);
+    mensaje.textContent = 'Error de conexión con el servidor.';
+    mensaje.style.color = 'red';
   }
 });

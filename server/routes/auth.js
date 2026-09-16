@@ -65,10 +65,6 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ success: false, message: 'Credenciales inválidas' });
     }
 
-    if (!usuario.verificado) {
-      return res.status(403).json({ success: false, message: 'Debés verificar tu email antes de ingresar' });
-    }
-
     const token = jwt.sign(
       {
         id: usuario._id,
@@ -79,7 +75,13 @@ router.post('/login', async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: '2h' }
     );
-
+    if (!usuario.verificado) {
+      return res.status(403).json({
+        success: false,
+        message: 'Debés verificar tu email antes de ingresar',
+        noVerificado: true
+      });
+    }
     res.cookie('token', token, { //El token entre ' ' es el nombre de la Cookie
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production', // solo HTTPS en prod, en dev funciona sin HTTPS
@@ -94,11 +96,14 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// GET Verificación
+// En vez de devolver JSON crudo, redirige a una página PHP del frontend(FRONTEND_URL/verificacion.php) pasando el resultado en ?status= Valores posibles: ok | invalido | expirado | sin-token | error
 router.get('/verify', async (req, res) => {
   const { token } = req.query;
+  const baseRedirect = `${process.env.FRONTEND_URL}/verificacion.php`;
 
   if (!token) {
-    return res.status(400).json({ success: false, message: 'Token no provisto' });
+    return res.redirect(`${baseRedirect}?status=sin-token`);
   }
 
   try {
@@ -108,7 +113,11 @@ router.get('/verify', async (req, res) => {
     });
 
     if (!usuario) {
-      return res.status(400).json({ success: false, message: 'Token inválido o expirado' });
+      // Distinguimos "no existe / ya usado" de "existe pero venció",
+      // así la página puede mostrar un mensaje más útil en cada caso
+      const usuarioConEseToken = await User.findOne({ tokenVerificacion: token });
+      const status = usuarioConEseToken ? 'expirado' : 'invalido';
+      return res.redirect(`${baseRedirect}?status=${status}`);
     }
 
     usuario.verificado = true;
@@ -116,10 +125,10 @@ router.get('/verify', async (req, res) => {
     usuario.tokenVerificacionExpira = undefined;
     await usuario.save();
 
-    res.json({ success: true, message: 'Cuenta verificada correctamente' });
+    return res.redirect(`${baseRedirect}?status=ok`);
   } catch (error) {
     console.error('Error en verificación:', error);
-    res.status(500).json({ success: false, message: 'Error al verificar la cuenta' });
+    return res.redirect(`${baseRedirect}?status=error`);
   }
 });
 
@@ -204,6 +213,53 @@ router.get('/me', (req, res) => {
     res.json({ id: decoded.id, nombre: decoded.nombre, email: decoded.email, roles: decoded.roles });
   } catch (err) {
     return res.status(401).json({ error: 'Token inválido o expirado' });
+  }
+});
+
+// POST /api/resend-verification
+router.post('/resend-verification', async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    const usuario = await User.findOne({ email });
+
+    // Caso 1: no existe, o Caso 2: ya está verificado -> respuesta genérica
+    if (!usuario || usuario.verificado) {
+      return res.json({
+        success: true,
+        message: 'Si el email corresponde a una cuenta pendiente de verificación, te reenviamos el link.'
+      });
+    }
+
+    // Rate limit: no reenviar antes de 1 minuto desde el último envío
+    const UN_MINUTO = 60 * 1000;
+    if (
+      usuario.ultimoReenvioVerificacion &&
+      Date.now() - usuario.ultimoReenvioVerificacion.getTime() < UN_MINUTO
+    ) {
+      return res.json({
+        success: false,
+        message: 'Esperá un momento antes de pedir otro mail de verificación.'
+      });
+    }
+
+    // Generar token nuevo (pisa el viejo)
+    const tokenVerificacion = crypto.randomBytes(32).toString('hex');
+    usuario.tokenVerificacion = tokenVerificacion;
+    usuario.tokenVerificacionExpira = new Date(Date.now() + 24 * 60 * 60 * 1000);
+    usuario.ultimoReenvioVerificacion = new Date();
+    await usuario.save();
+
+    await enviarMailVerificacion(usuario.email, tokenVerificacion);
+
+    return res.json({
+      success: true,
+      message: 'Si el email corresponde a una cuenta pendiente de verificación, te reenviamos el link.'
+    });
+
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ success: false, message: 'Error al reenviar la verificación.' });
   }
 });
 
