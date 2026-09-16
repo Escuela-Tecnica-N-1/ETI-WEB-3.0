@@ -7,9 +7,11 @@ const fileSchema = new Schema({
   size: { type: Number, required: true},
   path: { type: String, required: true},
   description: { type: String, default: ''},
-  category: { type: String, enum: ['matematicas','lengua','ciencias','historia','geografia','fisica','quimica','biologia','informatica','tecnologia','ingles','educacion_fisica','arte','musica','general'], default: 'general'},
-  professorId: { type: Schema.Types.ObjectId, ref: 'Professor', required: true},
-  professorName: { type: String, required: true},
+  category: { 
+    type: String,
+    enum: ['matematicas','lengua','ciencias','historia','geografia','fisica','quimica','biologia','informatica','tecnologia','ingles','educacion_fisica','arte','musica','general'], 
+    default: 'general'},
+  UserId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   uploadDate: { type: Date, default: Date.now},
   lastModified: { type: Date, default: Date.now},
   isPublic: { type: Boolean, default: false},
@@ -18,8 +20,8 @@ const fileSchema = new Schema({
 });
 
 // Índices para mejorar la consulta
-fileSchema.index({ professorId: 1, category: 1 });
-fileSchema.index({ professorId: 1, uploadDate: -1 });
+fileSchema.index({ UserId: 1, category: 1 });
+fileSchema.index({ UserId: 1, uploadDate: -1 });
 
 // Middleware para actualizar lastModified
 fileSchema.pre('save', function() {

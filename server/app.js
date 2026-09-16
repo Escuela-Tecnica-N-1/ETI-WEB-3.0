@@ -3,19 +3,25 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 const multer = require('multer');
+const cookieParser = require('cookie-parser');
 dotenv.config();
 
 const connectDB = require('./db/connection');
 const authRoutes = require('./routes/auth');
 const fileRoutes = require('./routes/files');
+const adminRoutes = require('./routes/admin');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost',  // dominio del frontend (Laragon)
+  credentials: true            // permite que se manden cookies
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // Servir archivos estáticos (para las descargas)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -26,6 +32,7 @@ connectDB();
 // Rutas
 app.use('/api', authRoutes);
 app.use('/api', fileRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Ruta de prueba
 app.get('/api/test', (req, res) => {
