@@ -4,29 +4,29 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link">Institucional <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="autoridades.php">Autoridades</a></li>
-                    <li><a href="informacion-administrativa.php">Información Administrativa</a></li>
-                    <li><a href="acuerdoConvivencia.pdf" target="_blank">Acuerdo de convivencia</a></li>
-                    <li><a href="profesores.php">Profesores</a></li>
+                    <li><a href="../../../autoridades.php">Autoridades</a></li>
+                    <li><a href="../../../informacion-administrativa.php">Información Administrativa</a></li>
+                    <li><a href="../../../acuerdoConvivencia.pdf" target="_blank">Acuerdo de convivencia</a></li>
+                    <li><a href="../../../profesores.php">Profesores</a></li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="ciclobasico.php" class="nav-link <?php echo ($current_page == 'ciclobasico.php') ? 'active' : ''; ?>">Ciclo Básico</a>
+                <a href="../cicloBasico/ciclobasico.php" class="nav-link <?php echo ($current_page == 'ciclobasico.php') ? 'active' : ''; ?>">Ciclo Básico</a>
             </li>
             <li class="nav-item">
-                <a href="ciclosuperior.php" class="nav-link <?php echo ($current_page == 'ciclosuperior.php') ? 'active' : ''; ?>">Ciclo Superior</a>
+                <a href="../cicloSuperior/ciclosuperior.php" class="nav-link <?php echo ($current_page == 'ciclosuperior.php') ? 'active' : ''; ?>">Ciclo Superior</a>
             </li>
             <li class="nav-item">
-                <a href="noticias.php" class="nav-link <?php echo ($current_page == 'noticias.php') ? 'active' : ''; ?>">Noticias</a>
+                <a href="../noticias/noticias.php" class="nav-link <?php echo ($current_page == 'noticias.php') ? 'active' : ''; ?>">Noticias</a>
             </li>
             <li class="nav-item">
-                <a href="egresados.php" class="nav-link <?php echo ($current_page == 'egresados.php') ? 'active' : ''; ?>">Egresados</a>
+                <a href="../egresados/egresados.php" class="nav-link <?php echo ($current_page == 'egresados.php') ? 'active' : ''; ?>">Egresados</a>
             </li>
             <li class="nav-item">
-                <a href="biblioteca.php" class="nav-link <?php echo ($current_page == 'biblioteca.php') ? 'active' : ''; ?>">Biblioteca</a>
+                <a href="../biblioteca/biblioteca.php" class="nav-link <?php echo ($current_page == 'biblioteca.php') ? 'active' : ''; ?>">Biblioteca</a>
             </li>
             <li class="nav-item">
-                <a href="Plan_estudio.php" class="nav-link <?php echo ($current_page == 'Plan_estudio.php') ? 'active' : ''; ?>">Plan de Estudio</a>
+                <a href="../PlanEstudio/PlanEstudio.php" class="nav-link <?php echo ($current_page == 'Plan_estudio.php') ? 'active' : ''; ?>">Plan de Estudio</a>
             </li>
         </ul>
     </div>
@@ -37,13 +37,13 @@
 </button>
 
 <div id="mobileNavMenu" aria-hidden="true" class="mobile-nav-menu">
-  <a href="index.php" tabindex="-1">Inicio</a>
-  <a href="egresados.php" tabindex="-1">Egresados</a>
-  <a href="electromecanica.php" tabindex="-1">Electromecanica</a>
-  <a href="informatica.php" tabindex="-1">Informática</a>
-  <a href="noticias.php" tabindex="-1">Noticias</a>
-  <a href="ciclobasico.php" tabindex="-1">Ciclo Básico</a>
-  <a href="biblioteca.php" tabindex="-1">Biblioteca</a>
+  <a href="../../../index.php" tabindex="-1">Inicio</a>
+  <a href="../egresados/egresados.php" tabindex="-1">Egresados</a>
+  <a href="../modalidades/electromecanica.php" tabindex="-1">Electromecanica</a>
+  <a href="../modalidades/informatica.php" tabindex="-1">Informática</a>
+  <a href="../noticias/noticias.php" tabindex="-1">Noticias</a>
+  <a href="../cicloBasico/ciclobasico.php" tabindex="-1">Ciclo Básico</a>
+  <a href="../biblioteca/biblioteca.php" tabindex="-1">Biblioteca</a>
 </div>
 
 <div id="overlay" tabindex="-1" class="overlay"></div>

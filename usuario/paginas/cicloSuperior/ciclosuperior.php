@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ciclo Superior - Escuela Técnica</title>
-    <link rel="stylesheet" href="css/informatica.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="imagenes/escudo.png" type="image/png">
+    <link rel="stylesheet" href="../../css/styles.css">
+
+    <link rel="stylesheet" href="../modalidades/informatica.css">
+
+    <link rel="icon" href="../../imagenes/escudo.png" type="image/png">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <?php include 'header.php'; ?>
+    <?php include '../componentes/header.php'; ?>
 
-    <?php include 'navbar.php'; ?>
+    <?php include '../componentes/navbar.php'; ?>
 
 </body>
     <main>
@@ -49,7 +51,7 @@
                             <li><i class="fas fa-chevron-right"></i> Redes y seguridad informática</li>
                             <li><i class="fas fa-chevron-right"></i> Bases de datos y sistemas de información</li>
                         </ul>
-                        <a href="informatica.php"><button class="btn btn-blue">Explorar Informática</button></a>
+                        <a href="../modalidades/informatica.php"><button class="btn btn-blue">Explorar Informática</button></a>
                     </div>
 
                     <div class="modality-card electromecanica">
@@ -64,7 +66,7 @@
                             <li><i class="fas fa-chevron-right"></i> Mecánica industrial y automatización</li>
                             <li><i class="fas fa-chevron-right"></i> Diseño asistido por computadora (CAD)</li>
                         </ul>
-                        <a href="electromecanica.php"><button class="btn btn-amber">Explorar Electromecánica</button></a>
+                        <a href="../modalidades/electromecanica.php"><button class="btn btn-amber">Explorar Electromecánica</button></a>
                     </div>
                 </div>
             </div>
@@ -72,7 +74,7 @@
  
         </div>
 
-        <?php include 'footer.php'; ?>
+        <?php include '../componentes/footer.php'; ?>
     </main>
 
     <script src="js/script.js"></script>

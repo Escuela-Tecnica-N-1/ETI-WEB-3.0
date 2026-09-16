@@ -57,7 +57,7 @@ if (!empty($_COOKIE['token'])) {
                 </div>
                 
                 <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px;">
-                    <a href="interfazProfe.php" style="text-decoration: none;">
+                    <a href="usuario/paginas/viewFuncionalidades/interfazProfe.php" style="text-decoration: none;">
                         <button class="btn btn-primary" style="width: 100%;">
                             <i class="fas fa-folder-open"></i>&nbsp; Acceder a la interfaz
                         </button>
@@ -136,7 +136,7 @@ if (!empty($_COOKIE['token'])) {
                         </p>
 
                         <div class="button-group">
-                            <a href="conocemas.php">
+                            <a href="usuario/paginas/conoceMas/conoceMas.php">
                                 <button class="btn btn-primary" id="conocemas-button">
                                     Conoce más sobre nosotros
                                 </button>
@@ -151,7 +151,7 @@ if (!empty($_COOKIE['token'])) {
                     </div>
 
                     <div class="welcome-image">
-                        <img src="imagenes/escuelafoto.jpeg"
+                        <img src="usuario/imagenes/escuelafoto.jpeg"
                             alt="Escuela Técnica"
                             id="fotoEsc">
                     </div>
@@ -271,17 +271,17 @@ if (!empty($_COOKIE['token'])) {
         </section>
         
     <!-- Footer -->
-    <?php include 'footer.php'; ?>
+    <?php include 'usuario/paginas/componentes/footer.php'; ?>
     </main>
 
 
     <!--Script de noticias y login-->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="js/script/mapa.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/easteregg.js"></script>
-    <script src="js/estadisticas.js"></script>
-    <script src="js/script/parallax.js"></script>
+    <script src="usuario/script/utility/mapa.js"></script>
+    <script src="usuario/script/servidor.js"></script>
+    <script src="usuario/script/login.js"></script>
+    <script src="usuario/script/interfaz.js"></script>
+    <script src="usuario/script/fileManager.js"></script>
 </body>
 </html>

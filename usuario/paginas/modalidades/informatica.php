@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Técnico en Informática - Escuela Técnica</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="../../css/informatica.css">
-    <link rel="icon" href="imagenes/escudo.png" type="image/png">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="informatica.css">
+    <link rel="icon" href="../../imagenes/escudo.png" type="image/png">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <?php include '../../paginas/complementos/header.php'; ?>
+    <?php include '../componentes/header.php'; ?>
 
-    <?php include '../../paginas/complementos/navbar.php'; ?>
+    <?php include '../componentes/navbar.php'; ?>
 
     <main>
         <div class="container">
@@ -36,7 +36,7 @@
                 <div class="subjects-grid">
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\seguridad-informatica.png" alt="Seguridad Informática">
+                            <img src="../../imagenes/informatica/seguridad-informatica.png" alt="Seguridad Informática">
                         </div>
                         <div class="subject-content">
                             <h3>Seguridad Informática</h3>
@@ -46,7 +46,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\imagen-Sistemas.Digitales.jpg" alt="Sistemas Digitales">
+                            <img src="../../imagenes/informatica/imagen-Sistemas.Digitales.jpg" alt="Sistemas Digitales">
                         </div>
                         <div class="subject-content">
                             <h3>Sistemas Digitales</h3>
@@ -56,7 +56,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\imagen-sistemas operativos.jpg" alt="Laboratorio de Sistemas Operativos">
+                            <img src="../../imagenes/informatica/imagen-sistemas operativos.jpg" alt="Laboratorio de Sistemas Operativos">
                         </div>
                         <div class="subject-content">
                             <h3>Laboratorio de Sistemas Operativos</h3>
@@ -66,7 +66,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\imagen-hardware.webp" alt="Laboratorio de Hardware">
+                            <img src="../../imagenes/informatica/imagen-hardware.webp" alt="Laboratorio de Hardware">
                         </div>
                         <div class="subject-content">
                             <h3>Laboratorio de Hardware</h3>
@@ -76,7 +76,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\imagen-Programación.jpg" alt="Laboratorio de Programación">
+                            <img src="../../imagenes/informatica/imagen-Programación.jpg" alt="Laboratorio de Programación">
                         </div>
                         <div class="subject-content">
                             <h3>Laboratorio de Programación</h3>
@@ -86,7 +86,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\teleinformatica.jpg" alt="Teleinformática">
+                            <img src="../../imagenes/informatica/teleinformatica.jpg" alt="Teleinformática">
                         </div>
                         <div class="subject-content">
                             <h3>Teleinformática</h3>
@@ -96,7 +96,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\Investigacion-informatica.webp" alt="Investigación Operativa">
+                            <img src="../../imagenes/informatica/Investigacion-informatica.webp" alt="Investigación Operativa">
                         </div>
                         <div class="subject-content">
                             <h3>Investigación Operativa</h3>
@@ -106,7 +106,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\Sistemas-computacionales.jpg" alt="Mantenimiento y Reparación de Sistemas Computacionales">
+                            <img src="../../imagenes/informatica/Sistemas-computacionales.jpg" alt="Mantenimiento y Reparación de Sistemas Computacionales">
                         </div>
                         <div class="subject-content">
                             <h3>Mantenimiento y Reparación de Sistemas Computacionales</h3>
@@ -116,7 +116,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\mantenimiento-de-redes.webp" alt="Mantenimiento de Redes">
+                            <img src="../../imagenes/informatica/mantenimiento-de-redes.webp" alt="Mantenimiento de Redes">
                         </div>
                         <div class="subject-content">
                             <h3>Mantenimiento de Redes</h3>
@@ -126,7 +126,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\laboratorio-aplicaciones.jpeg" alt="Laboratorio de Aplicaciones">
+                            <img src="../../imagenes/informatica/laboratorio-aplicaciones.jpeg" alt="Laboratorio de Aplicaciones">
                         </div>
                         <div class="subject-content">
                             <h3>Laboratorio de Aplicaciones</h3>
@@ -136,7 +136,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\bases_datos.jpeg" alt="Bases de datos">
+                            <img src="../../imagenes/informatica/bases_datos.jpeg" alt="Bases de datos">
                         </div>
                         <div class="subject-content">
                             <h3>Base de datos</h3>
@@ -146,7 +146,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\informatica\Ing_sistemas-computacionales-crear.jpg" alt="Proyecto, Diseño e Implementación de Sistemas Computacionales">
+                            <img src="../../imagenes/informatica/Ing_sistemas-computacionales-crear.jpg" alt="Proyecto, Diseño e Implementación de Sistemas Computacionales">
                         </div>
                         <div class="subject-content">
                             <h3>Proyecto, Diseño e Implementación de Sistemas Computacionales</h3>
@@ -177,7 +177,7 @@
     </main>
 
     <!-- Footer -->
-    <?php include 'footer.php'; ?>
+    <?php include '../componentes/footer.php'; ?>
 
     
     <script>

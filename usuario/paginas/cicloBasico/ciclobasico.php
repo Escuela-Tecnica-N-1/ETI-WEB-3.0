@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ciclo Básico - Escuela Técnica</title>
-    <link rel="stylesheet" href="css/informatica.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="imagenes/escudo.png" type="image/png">
+    <link rel="stylesheet" href="../../css/styles.css">
+
+    <link rel="stylesheet" href="../modalidades/informatica.css">
+
+    <link rel="stylesheet" href="ciclobasico.css">
+    <link rel="icon" href="../../imagenes/escudo.png" type="image/png">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <?php include 'header.php'; ?>
+    <?php include '../componentes/header.php'; ?>
 
-    <?php include 'navbar.php'; ?>
+    <?php include '../componentes/navbar.php'; ?>
 
     <main>
         <div class="container">
@@ -36,7 +39,7 @@
                 <div class="subjects-grid">
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\ciclobasico\carpinteria.jpg" alt="Carpintería">
+                            <img src="../../imagenes/ciclobasico/carpinteria.jpg" alt="Carpintería">
                         </div>
                         <div class="subject-content">
                             <h3>Carpintería</h3>
@@ -46,7 +49,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\ciclobasico\hojalateria.png" alt="Hojalatería">
+                            <img src="../../imagenes/ciclobasico/hojalateria.png" alt="Hojalatería">
                         </div>
                         <div class="subject-content">
                             <h3>Hojalatería</h3>
@@ -56,7 +59,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\ciclobasico\herreria.jpg" alt="Herrería">
+                            <img src="../../imagenes/ciclobasico/herreria.jpg" alt="Herrería">
                         </div>
                         <div class="subject-content">
                             <h3>Herrería</h3>
@@ -66,7 +69,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\ciclobasico\vitrofusion.png" alt="Vitrofusión">
+                            <img src="../../imagenes/ciclobasico/vitrofusion.png" alt="Vitrofusión">
                         </div>
                         <div class="subject-content">
                             <h3>Vitrofusión</h3>
@@ -76,7 +79,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\ciclobasico\soldadura de estaño.jpg" alt="Electricidad">
+                            <img src="../../imagenes/ciclobasico/soldadura de estaño.jpg" alt="Electricidad">
                         </div>
                         <div class="subject-content">
                             <h3>Electricidad</h3>
@@ -86,7 +89,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\ciclobasico\lenguaje_tecnologico.png" alt="Lenguaje Tecnológico">
+                            <img src="../../imagenes/ciclobasico/lenguaje_tecnologico.png" alt="Lenguaje Tecnológico">
                         </div>
                         <div class="subject-content">
                             <h3>Lenguaje Tecnológico</h3>
@@ -96,7 +99,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="imagenes\ciclobasico\dibujo_tecnico.pfgvuow<hgv+0t ng" alt="Dibujo Técnico">
+                            <img src="../../imagenes/ciclobasico/dibujo_tecnico.png" alt="Dibujo Técnico">
                         </div>
                         <div class="subject-content">
                             <h3>Dibujo Técnico</h3>
@@ -105,6 +108,6 @@
                     </div>
     </main>
 
-    <?php include 'footer.php'; ?>
+    <?php include '../componentes/footer.php'; ?>
 </body>
 </html>

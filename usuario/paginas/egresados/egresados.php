@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Egresados - Escuela Técnica</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/egresados.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="egresados.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="imagenes/escudo.png" type="image/png">
+    <link rel="icon" href="../../imagenes/escudo.png" type="image/png">
 
 
 </head>
 <body>
     
-    <?php include 'header.php'; ?>
+    <?php include '../componentes/header.php'; ?>
 
-    <?php include 'navbar.php'; ?>
+    <?php include '../componentes/navbar.php'; ?>
 
     <main>
         <div class="search-container-sw">
@@ -35,19 +35,19 @@
             <div class="carousel-inner">
 
                 <div class="carousel-item active">
-                    <img src="imagenes/egresados/1971.webp" class="d-block w-100" alt="1971">
+                    <img src="../../imagenes/egresados/1971.webp" class="d-block w-100" alt="1971">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="imagenes/egresados/1972.webp" class="d-block w-100" alt="1972">
+                    <img src="../../imagenes/egresados/1972.webp" class="d-block w-100" alt="1972">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="imagenes/egresados/1973.webp" class="d-block w-100" alt="1973">
+                    <img src="../../imagenes/egresados/1973.webp" class="d-block w-100" alt="1973">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="imagenes/egresados/1974.webp" class="d-block w-100" alt="1974">
+                    <img src="../../imagenes/egresados/1974.webp" class="d-block w-100" alt="1974">
                 </div>
 
                 <div class="carousel-item">
@@ -297,7 +297,7 @@
     </main>
 
     <!-- Footer -->
-    <?php include 'footer.php'; ?>
+    <?php include '../componentes/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 

@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interfaz Docente</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/interfaz_profe.css">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="interfaz_profe.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" href="imagenes/escudo.png" type="image/png">
+  <link rel="icon" href="../../imagenes/escudo.png" type="image/png">
 </head>
 <body>
 <!-- HEADER -->
 <header>
     <div class="container header-content asd">
         <div class="logo">
-          <a href="index.php">
-            <img src="imagenes/escudo.png" alt="Escudo de la Escuela Técnica">
+          <a href="../../../index.php">
+            <img src="../../imagenes/escudo.png" alt="Escudo de la Escuela Técnica">
             <h1>Escuela Técnica N°1</h1>
           </a>
         </div>
-        <a href="index.php" class="logout-link">
-        <img class="logout" src="imagenes/cerrar sesión.png" alt="Cerrar sesión">
+        <a href="../../../index.php" class="logout-link">
+        <img class="logout" src="../../imagenes/cerrar sesión.png" alt="Cerrar sesión">
       </a>
     </div>
 </header>
@@ -64,7 +64,7 @@
 </div>
 
   <!-- FOOTER -->
-  <?php include 'footer.php'; ?>
+  <?php include '../componentes/footer.php'; ?>
 
 </body>
 </html>

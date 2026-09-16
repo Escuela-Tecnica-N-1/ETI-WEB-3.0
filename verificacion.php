@@ -139,7 +139,7 @@ $data = isset($contenido[$status]) ? $contenido[$status] : $contenido['error'];
 
         <?php if ($data['mostrarLogin']): ?>
         <!-- Ajustar el href al login real del sitio -->
-        <a class="boton" href="/ETI-WEB-3.0-PersonalDev/index.php">Ir a iniciar sesión</a>
+        <a class="boton" href="index.php">Ir a iniciar sesión</a>
         <?php endif; ?>
 
         <?php if ($data['mostrarReenvio']): ?>
