@@ -26,14 +26,14 @@ if (!empty($_COOKIE['token'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escuela Técnica</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/estadisticas.css">
-    <link rel="stylesheet" href="css/boton_mapa.css">
+    <link rel="stylesheet" href="usuario/css/styles.css">
+    <link rel="stylesheet" href="usuario/css/login.css">
+    <link rel="stylesheet" href="usuario/css/componentes/estadisticas.css">
+    <link rel="stylesheet" href="usuario/css/componentes/boton_mapa.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <link rel="icon" href="imagenes/escudo.png" type="image/png">
+    <link rel="icon" href="usuario/imagenes/escudo.png" type="image/png">
 </head>
 
 <body>
