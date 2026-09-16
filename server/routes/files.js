@@ -14,7 +14,7 @@ const authenticateToken = require('../middlewares/authenticateToken');
 const verificarRol = (rolesPermitidos) => {
   return (req, res, next) => {
     const roles = req.user.roles; // Agarrar los roles del usuario desde el token
-    const tieneAcceso = rolesPermitidos.some(rol => roles.includes(rol)); // 
+    const tieneAcceso = rolesPermitidos.some(rol => roles.includes(rol));
 
     if (!tieneAcceso) {
       return res.status(403).json({ success: false, message: 'No tenés permiso para esto' });
