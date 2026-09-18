@@ -7,11 +7,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/interfaz_profe.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<<<<<<< HEAD
   <link rel="icon" href="./imagenes/logo-escuela-azull.png" type="image/png">
-=======
-  <link rel="icon" href="imagenes/escudo.png" type="image/png">
->>>>>>> 4f8cd05ede75ffd85e63997c76811357776e14f6
 </head>
 <body>
 <!-- HEADER -->

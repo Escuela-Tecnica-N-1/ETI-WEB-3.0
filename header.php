@@ -7,8 +7,6 @@
           <h1>Escuela Técnica N°1</h1>
         </a>
       </div>
-    
-     
     </div>
   </div>
 </header>
