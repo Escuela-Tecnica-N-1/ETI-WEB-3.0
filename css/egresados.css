@@ -1,0 +1,80 @@
+.popup-message {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 1000;
+}
+
+.popup-message.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-container-sw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.search-input-sw {
+  color: #0ea5e9;
+  padding: 8px 12px;
+  border: 1px solid #075985;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 250px;
+}
+
+.search-input-sw::placeholder {
+  color: rgba(14, 164, 233, 0.47);
+}
+
+.search-button-sw {
+  padding: 8px 12px;
+  background-color: #075985;
+  color: white;
+  border: 2px solid #075985;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button-sw:hover {
+  background-color: #0ea5e9;
+}
+
+
+
+#carouselExample {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+#carouselExample img {
+    border-radius: 5px;
+}
+
+.carousel-item {
+    transition: opacity .3s ease-in-out;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  width: 8%;
+}  
+
+
+.footer-col ul {
+  padding: 0;
+}

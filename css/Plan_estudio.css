@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.subtitle {
+  text-align: center;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* Controles de selección */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.year-selector,
+.specialty-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+label {
+  font-weight: 600;
+  color: #34495e;
+}
+
+select {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Tabla de plan de estudio - Estilo Minimalista */
+.schedule-container {
+  overflow-x: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white;
+  margin-bottom: 3rem;
+}
+
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.plan-table th {
+  background-color: #2c3e50;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #34495e;
+}
+
+.plan-table td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+  color: #2c3e50;
+}
+
+.plan-table tr:last-child td {
+  border-bottom: none;
+}
+
+.plan-table tbody tr:hover {
+  background-color:  #ade1e1;
+  transition: background-color 0.2s ease;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.schedule-table th {
+  background-color: #f8f9fa;
+  color: #495057;
+  font-weight: 600;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+
+
+.schedule-table td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.schedule-table tr:last-child td {
+  border-bottom: none;
+}
+
+.schedule-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.plan-table td:nth-child(2),
+.plan-table td:nth-child(3) {
+    padding-left: 70px;
+}
+
+tr:nth-child(even){
+  background-color: #f5f5f5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .plan-table td:nth-child(2),
+  .plan-table td:nth-child(3) {
+    padding-left: 30px;
+}
+}

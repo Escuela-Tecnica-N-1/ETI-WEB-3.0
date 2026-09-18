@@ -1,0 +1,271 @@
+:root {
+    --electromecanica-primary:   #512e92;
+    --electromecanica-secondary: #7c4fce; 
+    --electromecanica-light:     rgb(227, 211, 255); 
+    --electromecanica-dark:      #1d054b; 
+    --electromecanica-accent:    #6337b6; 
+}
+
+/* Header styling with electromecanica theme */
+header {
+    background-color: var(--electromecanica-dark);
+}
+
+.logo h1 {
+    color: white;
+}
+
+/* Navigation active link for electromecanica */
+.main-nav .nav-link.active {
+    color: var(--electromecanica-secondary);
+    border-bottom: 3px solid var(--electromecanica-secondary);
+}
+
+/* Mobile navigation theme adjustments */
+.mobile-nav-header {
+    background-color: var(--electromecanica-dark);
+    color: white;
+}
+
+.mobile-nav-close {
+    color: white;
+}
+
+.mobile-nav-item a.mobile-nav-link:hover {
+    color: var(--electromecanica-primary);
+}
+
+/* Introduction section */
+.intro-section {
+    margin-top: 5px;
+    background: linear-gradient(to right, var(--electromecanica-dark), var(--electromecanica-primary));
+    color: white;
+    padding: 3rem 0;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.intro-section .section-header h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.intro-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+/* Subjects section */
+.subjects-section {
+    padding: 2rem 0 4rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--electromecanica-dark);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--electromecanica-secondary);
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+.subject-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.subject-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.subject-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.subject-card:hover .subject-image img {
+    transform: scale(1.05);
+}
+
+.subject-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.subject-content h3 {
+    color: var(--electromecanica-dark);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.subject-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--electromecanica-secondary);
+}
+
+.subject-content p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Career section */
+.career-section {
+    background-color: var(--electromecanica-light);
+    padding: 3rem 0;
+    border-radius: 0.5rem;
+    margin: 3rem 0;
+}
+
+.career-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.career-list {
+    margin: 1.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+.career-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.career-list li i {
+    color: var(--electromecanica-secondary);
+    margin-right: 0.75rem;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-amber {
+    background-color: var(--electromecanica-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-amber:hover {
+    background-color: var(--electromecanica-dark);
+}
+
+/* Footer customizations for electromecanica */
+footer .footer-col h3::after {
+    background-color: var(--electromecanica-secondary);
+}
+
+.social-link:hover {
+    background-color: var(--electromecanica-primary);
+}
+
+/* Contact popover customizations */
+.contact-popover .popover-content {
+    border-top: 3px solid var(--electromecanica-primary);
+}
+
+.contact-popover .popover-content p {
+    color: var(--electromecanica-dark);
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    .subjects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .career-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .subjects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .career-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile navigation adjustments */
+@media (max-width: 768px) {
+    .intro-section .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+    
+    .subject-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .career-list li {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,241 @@
+body {
+    background-color: #f8fafc;
+}
+
+/* Encabezado de la sección de noticias */
+.noticias-header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+}
+
+.noticias-header h1 {
+    color: #1e293b;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.noticias-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Filtros de categorías */
+.noticias-filtros {
+    margin-bottom: 2rem;
+}
+
+.filtro-categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filtro-btn {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    color: #64748b;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filtro-btn:hover {
+    background-color: #f1f5f9;
+    color: #0369a1;
+}
+
+.filtro-btn.active {
+    background-color: #20b5bf;
+    color: white;
+    border-color: #20b5bf;
+}
+
+/* Grid de noticias */
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Tarjeta de noticia con esquina doblada */
+.noticia-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.noticia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.noticia-imagen {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.noticia-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.noticia-card:hover .noticia-imagen img {
+    transform: scale(1.05);
+}
+
+/* Efecto de esquina doblada en la imagen */
+.noticia-fold {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 30px 0;
+    border-color: transparent #20b5bf transparent transparent;
+    transition: border-width 0.3s ease;
+    z-index: 1;
+}
+
+.noticia-card:hover .noticia-fold {
+    border-width: 0 50px 50px 0;
+}
+
+.noticia-contenido {
+    padding: 1.5rem;
+}
+
+.noticia-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.noticia-fecha {
+    color: #64748b;
+}
+
+.noticia-fecha i {
+    margin-right: 0.25rem;
+}
+
+.noticia-categoria {
+    color: #20b5bf;
+    font-weight: 600;
+}
+
+.noticia-titulo {
+    color: #1e293b;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.noticia-extracto {
+    color: #64748b;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+}
+
+.noticia-enlace {
+    display: inline-flex;
+    align-items: center;
+    color: #20b5bf;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.noticia-enlace i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.noticia-enlace:hover {
+    color: #0e7c86;
+}
+
+.noticia-enlace:hover i {
+    transform: translateX(3px);
+}
+
+/* Paginación */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.pag-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    color: #64748b;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pag-btn:hover {
+    background-color: #f1f5f9;
+    color: #0369a1;
+}
+
+.pag-btn.active {
+    background-color: #20b5bf;
+    color: white;
+    border-color: #20b5bf;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+    .noticias-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .noticias-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .noticias-header h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 639px) {
+    .noticias-header h1 {
+        font-size: 2rem;
+    }
+    
+    .filtro-categorias {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        justify-content: flex-start;
+    }
+    
+    .filtro-btn {
+        white-space: nowrap;
+    }
+}

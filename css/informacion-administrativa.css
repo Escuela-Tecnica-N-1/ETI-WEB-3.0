@@ -1,0 +1,14 @@
+.full-div-body{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-left: 8vw;
+    gap: 10%;
+}
+
+.div-404-title, .div-404-descripcion{
+    width: 70%;
+}

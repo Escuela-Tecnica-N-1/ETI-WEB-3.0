@@ -1,0 +1,227 @@
+:root {
+    --color-primario: #0056b3; /* Un azul más vibrante y educativo */
+    --color-secundario: #2c3e50;
+    --color-fondo: #f4f7f9;
+    --color-texto: #333;
+    --color-blanco: #ffffff;
+    --sombra-suave: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --radio-borde: 12px;
+    --fuente-titulos: 'Montserrat', sans-serif;
+    --fuente-texto: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- ESTILOS DEL CUERPO Y TIPOGRAFÍA --- */
+body {
+    font-family: var(--fuente-texto);
+    line-height: 1.7;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+/* --- SECCIÓN PRINCIPAL (HERO) --- */
+.hero-section {
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 60px 30px;
+    background: linear-gradient(135deg, var(--color-primario) 0%, #007bff 100%);
+    color: var(--color-blanco);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+}
+
+.hero-section h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 650px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* --- LÍNEA DE TIEMPO VISUAL --- */
+.timeline-section {
+    position: relative;
+    padding: 40px 0;
+    display: flex; /* Usamos flexbox para la línea de tiempo */
+    flex-direction: column;
+    align-items: center; /* Centra los items si no hay línea vertical */
+}
+
+/* La línea vertical central */
+.timeline-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background-color: #dbe2e8;
+    transform: translateX(-50%);
+    z-index: 0; /* Asegura que la línea esté detrás de los items */
+}
+
+.timeline-item {
+    display: flex;
+    position: relative;
+    margin-bottom: 60px;
+    width: 80%; /* Ancho de los ítems en la línea de tiempo */
+    align-items: center;
+    justify-content: space-between; /* Espacio entre contenido e imagen */
+    gap: 40px;
+    background: var(--color-blanco);
+    padding: 30px;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1; /* Asegura que los items estén sobre la línea */
+
+    /* Animación de entrada */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUP 0.8s ease forwards;
+}
+
+.timeline-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* Alternar la dirección para los items pares */
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-content {
+    flex: 1; /* Permite que el contenido tome el espacio disponible */
+    padding: 10px;
+}
+
+.timeline-year {
+    display: inline-block;
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.timeline-title {
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    color: var(--color-secundario);
+    margin-bottom: 15px;
+}
+
+.timeline-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.timeline-image {
+    flex: 0 0 350px; /* Ancho fijo para las imágenes */
+    height: 250px; /* Altura fija para las imágenes */
+    border-radius: var(--radio-borde);
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.timeline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para que cubra el área */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+/* --- SECCIÓN DE LEGADO --- */
+.legacy-section {
+    margin-top: 60px;
+    text-align: center;
+    padding: 60px 40px;
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    border-radius: var(--radio-borde);
+}
+
+.legacy-section h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: var(--color-blanco);
+}
+
+.legacy-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* --- ANIMACIÓN --- */
+@keyframes fadeInUP {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Delay para cada item */
+.timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.timeline-item:nth-child(2) { animation-delay: 0.4s; }
+.timeline-item:nth-child(3) { animation-delay: 0.6s; }
+
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .timeline-item {
+        width: 100%; /* Los ítems ocupan todo el ancho */
+        flex-direction: column !important; /* Apila contenido e imagen */
+        padding: 20px;
+        text-align: center;
+        gap: 20px;
+    }
+    .timeline-image {
+        flex: none;
+        width: 100%; /* Imagen ocupa todo el ancho disponible */
+        height: 200px;
+    }
+    .timeline-content {
+        padding: 0;
+    }
+    .timeline-item:nth-child(even) {
+        flex-direction: column !important; /* Asegura que la dirección sea consistente */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 2.2rem; }
+    .hero-section p { font-size: 1.1rem; }
+    .timeline-title { font-size: 1.5rem; }
+    main { padding: 30px 15px; }
+    .legacy-section h2 { font-size: 2rem; }
+    .legacy-section p { font-size: 1rem; }
+}
