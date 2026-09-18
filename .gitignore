@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 uploads/
 server/.env
+=======
+uploads/
+server/.env
+>>>>>>> 4f8cd05ede75ffd85e63997c76811357776e14f6
 server/.test-email.js
