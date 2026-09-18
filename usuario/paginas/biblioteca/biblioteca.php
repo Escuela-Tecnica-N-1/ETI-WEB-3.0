@@ -6,6 +6,9 @@
     <title>Biblioteca - Escuela Técnica</title>
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="biblioteca.css">
+
+    <link rel="stylesheet" href="../modalidades/informatica.css">
+
     <link rel="icon" href="../../imagenes/escudo.png" type="image/png">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
