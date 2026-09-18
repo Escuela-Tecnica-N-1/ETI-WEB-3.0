@@ -6,7 +6,7 @@
   <title>Subir Archivo - Interfaz Docente</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/formulario_profes.css">
-  <link rel="icon" href="./imagenes/logo-escuela-azull.png" type="image/png">
+  <link rel="icon" href="imagenes/escudo.png" type="image/png">
 </head>
 <body>
   <header>
