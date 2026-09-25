@@ -17,9 +17,6 @@
                 <a href="../cicloSuperior/ciclosuperior.php" class="nav-link <?php echo ($current_page == 'ciclosuperior.php') ? 'active' : ''; ?>">Ciclo Superior</a>
             </li>
             <li class="nav-item">
-                <a href="../noticias/noticias.php" class="nav-link <?php echo ($current_page == 'noticias.php') ? 'active' : ''; ?>">Noticias</a>
-            </li>
-            <li class="nav-item">
                 <a href="../egresados/egresados.php" class="nav-link <?php echo ($current_page == 'egresados.php') ? 'active' : ''; ?>">Egresados</a>
             </li>
             <li class="nav-item">
@@ -41,7 +38,6 @@
   <a href="../egresados/egresados.php" tabindex="-1">Egresados</a>
   <a href="../modalidades/electromecanica.php" tabindex="-1">Electromecanica</a>
   <a href="../modalidades/informatica.php" tabindex="-1">Informática</a>
-  <a href="../noticias/noticias.php" tabindex="-1">Noticias</a>
   <a href="../cicloBasico/ciclobasico.php" tabindex="-1">Ciclo Básico</a>
   <a href="../biblioteca/biblioteca.php" tabindex="-1">Biblioteca</a>
 </div>

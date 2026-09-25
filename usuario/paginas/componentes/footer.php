@@ -8,10 +8,10 @@
             <div class="footer-col">
                 <h3>Enlaces rápidos</h3>
                 <ul>
-                    <li><a href="../../../index.php">Inicio</a></li>
-                    <li><a href="../cicloBasico/ciclobasico.php">Ciclo Básico</a></li>
+                    <li><a href="/usuario/paginas/cicloBasico/ciclobasico.php">Inicio</a></li>
+                    <li><a href="/usuario/paginas/cicloBasico/ciclobasico.php">Ciclo Básico</a></li> 
                     <li><a href="../cicloSuperior/ciclosuperior.php">Ciclo Superior</a></li>
-                    <li><a href="../PlanEstudio/PlanEstudio.php">Plan de Estudio</a></li>
+                    <li><a href="../PlanEstudio/PlanEstudio.php">Plan de Estudio</a></li> 
                 </ul>
             </div>
             <div class="footer-col" id="redirect-contacto">
