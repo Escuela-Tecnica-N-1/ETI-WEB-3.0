@@ -75,13 +75,6 @@ router.post('/login', async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: '2h' }
     );
-    if (!usuario.verificado) {
-      return res.status(403).json({
-        success: false,
-        message: 'Debés verificar tu email antes de ingresar',
-        noVerificado: true
-      });
-    }
     res.cookie('token', token, { //El token entre ' ' es el nombre de la Cookie
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production', // solo HTTPS en prod, en dev funciona sin HTTPS
@@ -119,8 +112,6 @@ router.get('/verify', async (req, res) => {
       const status = usuarioConEseToken ? 'expirado' : 'invalido';
       return res.redirect(`${baseRedirect}?status=${status}`);
     }
-
-    usuario.verificado = true;
     usuario.tokenVerificacion = undefined;
     usuario.tokenVerificacionExpira = undefined;
     await usuario.save();
@@ -222,14 +213,6 @@ router.post('/resend-verification', async (req, res) => {
 
   try {
     const usuario = await User.findOne({ email });
-
-    // Caso 1: no existe, o Caso 2: ya está verificado -> respuesta genérica
-    if (!usuario || usuario.verificado) {
-      return res.json({
-        success: true,
-        message: 'Si el email corresponde a una cuenta pendiente de verificación, te reenviamos el link.'
-      });
-    }
 
     // Rate limit: no reenviar antes de 1 minuto desde el último envío
     const UN_MINUTO = 60 * 1000;

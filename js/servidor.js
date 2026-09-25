@@ -103,7 +103,6 @@ form.addEventListener('submit', async (e) => {
     });
 
     const data = await res.json();
-    console.log(data.noVerificado);
     if (data.success) {
       mensaje.textContent = esRegistro ? 'Registro exitoso. Ahora puedes iniciar sesión.' : 'Inicio de sesión exitoso.';
       mensaje.style.color = 'green';
@@ -114,10 +113,6 @@ form.addEventListener('submit', async (e) => {
     } else {
       mensaje.textContent = data.message || 'Ocurrió un error.';
       mensaje.style.color = 'red';
-
-      if (data.noVerificado) {
-        reenviarBtn.style.display = 'inline-block';
-      }
     }
   } catch (err) {
     console.error(err);
