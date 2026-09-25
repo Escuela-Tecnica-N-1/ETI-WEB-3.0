@@ -102,11 +102,6 @@ if (!empty($_COOKIE['token'])) {
                     <p>¿Olvidaste tu contraseña?</p>
                 </div>
 
-                <button id="reenviar-verificacion" type="button" style="display:none; margin-top: 8px;">
-                    Reenviar mail de verificación
-                </button>
-
-                <p id="mensaje"></p>
 
                 <!-- formulario de "olvidé mi contraseña", oculto por defecto -->
                 <form id="forgot-form" style="display: none;">
