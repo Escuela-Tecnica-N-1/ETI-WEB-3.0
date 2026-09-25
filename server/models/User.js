@@ -9,8 +9,6 @@ const userSchema = new Schema({
         enum: ['admin', 'profesor', 'alumno'],
         default: ['alumno']
     },
-    tokenVerificacionExpira: { type: Date }, // Duración. Vence a las 24hs.
-    ultimoReenvioVerificacion: { type: Date}, // Este sirve para indicar cuando fue el último reenvio del gmail para verificar la cuenta
     
     // --- Recuperación de contraseña ("olvidé mi contraseña") ⬇️ 
     tokenReset: { type: String, default: null },   // Mientras tokenReset no sea null y no haya expirado, hay un reset pendiente. Y se limpia (vuelve a null) apenas se usa o al vencer, para que no se reutilice.

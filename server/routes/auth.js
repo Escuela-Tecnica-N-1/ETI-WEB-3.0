@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 
 const crypto = require('crypto');
-const { enviarMailVerificacion, enviarMailReset } = require('../services/emailService');
+const enviarMailReset = require('../services/emailService');
 
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
@@ -28,7 +28,6 @@ router.post('/register', async (req, res) => {
       nombre,
       email,
       contrasena: contrasenaHasheada,
-      tokenVerificacionExpira
     };
 
     if (!hayUsuarios) {
@@ -39,7 +38,7 @@ router.post('/register', async (req, res) => {
     await nuevoUser.save();
 
 
-    res.status(201).json({ success: true, message: 'Registro exitoso. Revisá tu email para verificar tu cuenta.' });
+    res.status(201).json({ success: true, message: 'Registro exitoso.' });
   } catch (error) {
     console.error('Error en registro:', error);
     res.status(500).json({ success: false, message: 'Error al registrar usuario' });
@@ -82,31 +81,6 @@ router.post('/login', async (req, res) => {
   } catch (error) {
     // console.error('Error en login:', error);  Para ver si salta algún error en el login
     res.status(500).json({ success: false, message: 'Error del servidor' });
-  }
-});
-
-// GET Verificación
-// En vez de devolver JSON crudo, redirige a una página PHP del frontend(FRONTEND_URL/verificacion.php) pasando el resultado en ?status= Valores posibles: ok | invalido | expirado | sin-token | error
-router.get('/verify', async (req, res) => {
-  const { token } = req.query;
-  const baseRedirect = `${process.env.FRONTEND_URL}/verificacion.php`;
-
-  if (!token) {
-    return res.redirect(`${baseRedirect}?status=sin-token`);
-  }
-
-  try {
-    const usuario = await User.findOne({
-      tokenVerificacionExpira: { $gt: new Date() }
-    });
-
-    usuario.tokenVerificacionExpira = undefined;
-    await usuario.save();
-
-    return res.redirect(`${baseRedirect}?status=ok`);
-  } catch (error) {
-    console.error('Error en verificación:', error);
-    return res.redirect(`${baseRedirect}?status=error`);
   }
 });
 
@@ -191,42 +165,6 @@ router.get('/me', (req, res) => {
     res.json({ id: decoded.id, nombre: decoded.nombre, email: decoded.email, roles: decoded.roles });
   } catch (err) {
     return res.status(401).json({ error: 'Token inválido o expirado' });
-  }
-});
-
-// POST /api/resend-verification
-router.post('/resend-verification', async (req, res) => {
-  const { email } = req.body;
-
-  try {
-    const usuario = await User.findOne({ email });
-
-    // Rate limit: no reenviar antes de 1 minuto desde el último envío
-    const UN_MINUTO = 60 * 1000;
-    if (
-      usuario.ultimoReenvioVerificacion &&
-      Date.now() - usuario.ultimoReenvioVerificacion.getTime() < UN_MINUTO
-    ) {
-      return res.json({
-        success: false,
-        message: 'Esperá un momento antes de pedir otro mail de verificación.'
-      });
-    }
-
-    // Generar token nuevo (pisa el viejo)
-
-    usuario.tokenVerificacionExpira = new Date(Date.now() + 24 * 60 * 60 * 1000);
-    usuario.ultimoReenvioVerificacion = new Date();
-    await usuario.save();
-
-    return res.json({
-      success: true,
-      message: 'Si el email corresponde a una cuenta pendiente de verificación, te reenviamos el link.'
-    });
-
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({ success: false, message: 'Error al reenviar la verificación.' });
   }
 });
 
