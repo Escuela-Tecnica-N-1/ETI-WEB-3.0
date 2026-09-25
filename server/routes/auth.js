@@ -22,15 +22,12 @@ router.post('/register', async (req, res) => {
     }
 
     const contrasenaHasheada = await bcrypt.hash(contrasena, 10);
-    const tokenVerificacion = crypto.randomBytes(32).toString('hex');
-    const tokenVerificacionExpira = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24hs
 
     const hayUsuarios = await User.findOne();
     const datosUsuario = {
       nombre,
       email,
       contrasena: contrasenaHasheada,
-      tokenVerificacion,
       tokenVerificacionExpira
     };
 
@@ -41,7 +38,6 @@ router.post('/register', async (req, res) => {
     const nuevoUser = new User(datosUsuario);
     await nuevoUser.save();
 
-    await enviarMailVerificacion(email, tokenVerificacion);
 
     res.status(201).json({ success: true, message: 'Registro exitoso. Revisá tu email para verificar tu cuenta.' });
   } catch (error) {
@@ -101,18 +97,9 @@ router.get('/verify', async (req, res) => {
 
   try {
     const usuario = await User.findOne({
-      tokenVerificacion: token,
       tokenVerificacionExpira: { $gt: new Date() }
     });
 
-    if (!usuario) {
-      // Distinguimos "no existe / ya usado" de "existe pero venció",
-      // así la página puede mostrar un mensaje más útil en cada caso
-      const usuarioConEseToken = await User.findOne({ tokenVerificacion: token });
-      const status = usuarioConEseToken ? 'expirado' : 'invalido';
-      return res.redirect(`${baseRedirect}?status=${status}`);
-    }
-    usuario.tokenVerificacion = undefined;
     usuario.tokenVerificacionExpira = undefined;
     await usuario.save();
 
@@ -227,13 +214,10 @@ router.post('/resend-verification', async (req, res) => {
     }
 
     // Generar token nuevo (pisa el viejo)
-    const tokenVerificacion = crypto.randomBytes(32).toString('hex');
-    usuario.tokenVerificacion = tokenVerificacion;
+
     usuario.tokenVerificacionExpira = new Date(Date.now() + 24 * 60 * 60 * 1000);
     usuario.ultimoReenvioVerificacion = new Date();
     await usuario.save();
-
-    await enviarMailVerificacion(usuario.email, tokenVerificacion);
 
     return res.json({
       success: true,

@@ -9,7 +9,6 @@ const userSchema = new Schema({
         enum: ['admin', 'profesor', 'alumno'],
         default: ['alumno']
     },
-    tokenVerificacion: { type: String }, // token random que se manda por mail.
     tokenVerificacionExpira: { type: Date }, // Duración. Vence a las 24hs.
     ultimoReenvioVerificacion: { type: Date}, // Este sirve para indicar cuando fue el último reenvio del gmail para verificar la cuenta
     
