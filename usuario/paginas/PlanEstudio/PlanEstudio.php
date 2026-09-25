@@ -57,6 +57,7 @@
         <tbody id="plan-body">
         <!-- El contenido se genera dinámicamente con JavaScript -->
         </tbody>
+        
       </table>
     </div>
   </div>
@@ -64,7 +65,7 @@
 
     <?php include '../componentes/footer.php'; ?>
 
-    <script src="js/Plan_estudio.js"></script>
+    <script src="PlanEstudio.js"></script>
 
 </body>
 
