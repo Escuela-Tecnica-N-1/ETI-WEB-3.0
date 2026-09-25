@@ -5,30 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel</title>
 </head>
-<header>
-  <div class="titulo">
-    <h1>Panel de Actividades</h1>
-    <p>Aqui se suben actividades,anuncios y material de estudio para los alumnos de la escuela tecnica</p>
-  </div>
-</header>
 <body>
+  <div class="menu-rol">
+    <div class="titulo">Escuela Técnica N 1</div>
+    <a href="materias.php"class="opciones">
+      Materias
+    </a>
+    <div class="opciones">Configuración</div>
+  </div>
   <!--contenedor del contenido estudiante-->
     <div class="cont-estudiante">
       <div class="separador-mats">
         
         <div class="conjunto">
-
-         <div class="ft-profe"> <!--contenedor de la foto-->
+          <div class="ft-profe"> <!--contenedor de la foto-->
             <img src="imagenes/usuario.png" class="fto-usuario"><!--clase de la foto-->
           </div>
-       
+            
           <div class="ingreso-mat">
             Historia
           </div><!--clase de la materia-->
-
-          <div class="mat-estudio">
-            materiales
-          </div> <!--clase material de estudio-->
         </div>
       </div>
 </div>
@@ -36,25 +32,42 @@
   <style>
     /*fondo de la pagina*/
     body{
-      background-color:blue;
+      background-color:white;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: var(--text-color);
     }
-    /*titulos y textos*/
-    header{
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text-color);
-    line-height: 1.6;
+    .menu-rol{
+      background-color:beige;
+      width:20%;
+      height:500px;
+    }
+    .titulo{
+      font-family:fantasy;
+      font-size:25px;
+    }
+    .opciones{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:50px;
+    font-family:bold;
+    cursor:pointer;
+    font-size:20px;
+    text-decoration:none;
+    color:inherit;
+    transition: 0.5s;
+    }
+    .opciones :hover{
+      background-color:rgb(71, 29, 224);
     }
    .cont-estudiante{
       display:flex;
-      flex-direction:column;
       justify-content:center;
       width:auto;
-      background-image: url("\imagenes\matematica.png");
     }
     .conjunto{
-      width:auto;
+      width:80%;
       height:auto;
       display:flex;
       flex-direction:row;
@@ -94,15 +107,6 @@
     align-text:center;
     align-content:center;
     margin:20px;
-    background-color:white;
-    cursor:pointer;
-   }
-   .mat-estudio{
-    width:80px;
-    height:50px;
-    margin:20px;
-    align-text:center;
-    align-content:center;
     background-color:white;
     cursor:pointer;
    }

@@ -1,16 +1,16 @@
 <!--boton de acceso al menu de estudiantes-->
 <button aria-label="menu Desplegable" class="menu-header" id="menuHeader" aria-expanded="false" aria-controls="menuDesplegable">
-        <img src="imagenes/usuario.png" alt="cuenta de usuario" class="ft-usuario">
-      </button>
+  <img src="imagenes/usuario.png" alt="cuenta de usuario" class="ft-usuario">
+</button>
    
 <!--oculta el menu-->
 <div id="overlay" tabindex="-1" class="overlay"></div>
-  <div id="menuDesplegable" class="menu-principal">
-<!--links-->
-    <a href="rol-estudiante.php" tabindex="-1">Materias</a>
-    <a href="rol-estudiante.php" tabindex="-1">Configuracion</a>
-  </div>
-    <style>
+<div id="menuDesplegable" class="menu-principal">
+  <!--links-->
+  <a href="rol-estudiante.php" tabindex="-1">Materias</a>
+  <a href="rol-estudiante.php" tabindex="-1">Configuracion</a>
+</div>
+<style>
   /*cuando sea menor a 768,desaparece el boton para que aparezca el de celular*/
   @media (max-width:768px){
     .menu-header{
@@ -18,11 +18,10 @@
     }
   }
   .menu-header{
-    width: 50px;
+    width:--anclaje ;
     height:50px;
     border-radius:60px;
     cursor:pointer;
-   
   }
   /*foto de la cuenta del usuario(temporal)*/
   .ft-usuario{
