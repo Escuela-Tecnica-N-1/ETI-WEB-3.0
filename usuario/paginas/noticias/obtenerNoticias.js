@@ -1,6 +1,6 @@
 const newsContainer = document.getElementById("news-container");
 
-fetch("./obtenerNoticias.php")
+fetch("usuario/paginas/noticias/obtenerNoticias.php")
     .then(response => response.json())
     .then(noticias => {
 
@@ -20,7 +20,7 @@ fetch("./obtenerNoticias.php")
             newsItem.dataset.id = index + 1;
 
             newsItem.innerHTML = `
-                <img src="imagenes/Noticias/${noticia.nombre}" alt="Noticia">
+                <img src="usuario/imagenes/Noticias/${noticia.nombre}" alt="Noticia">
             `;
 
             newsContainer.appendChild(newsItem);

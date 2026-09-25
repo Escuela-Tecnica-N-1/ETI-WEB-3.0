@@ -278,16 +278,17 @@ if (!empty($_COOKIE['token'])) {
     <!--Script de noticias y login-->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
     <script src="usuario/script/login.js"></script>
     <script src="usuario/script/servidor.js"></script>
     <script src="usuario/script/interfaz.js"></script>
-    <script src="usuario/script/fileManager.js"></script>
 
     <script src="usuario/script/utility/mapa.js"></script>
-    <script src="usuario/script/utility/noticias.js"></script>
     <script src="usuario/script/utility/parallax.js"></script>
     <script src="usuario/script/utility/easteregg.js"></script>
     <script src="usuario/script/utility/estadisticas.js"></script>
+
+    <script src="usuario/paginas/noticias/obtenerNoticias.js"></script>
     
 </body>
 </html>
