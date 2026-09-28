@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . '/../../../config/config.php';
+?>
 <nav class="main-nav">
     <div class="container">
         <ul class="nav-list">
@@ -11,19 +14,19 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="../../../usuario/paginas/cicloBasico/ciclobasico.php" class="nav-link <?php echo ($current_page == 'ciclobasico.php') ? 'active' : ''; ?>">Ciclo Básico</a>
+                <a href="<?= BASE_URL ?>/usuario/paginas/cicloBasico/ciclobasico.php" class="nav-link <?php echo ($current_page == 'ciclobasico.php') ? 'active' : ''; ?>">Ciclo Básico</a>
             </li>
             <li class="nav-item ">
-                <a href="../cicloSuperior/ciclosuperior.php" class="nav-link <?php echo ($current_page == 'ciclosuperior.php') ? 'active' : ''; ?>">Ciclo Superior</a>
+                <a href="<?= BASE_URL ?>/usuario/paginas/cicloSuperior/ciclosuperior.php" class="nav-link <?php echo ($current_page == 'ciclosuperior.php') ? 'active' : ''; ?>">Ciclo Superior</a>
             </li>
             <li class="nav-item">
-                <a href="../biblioteca/biblioteca.php" class="nav-link <?php echo ($current_page == 'biblioteca.php') ? 'active' : ''; ?>">Biblioteca</a>
+                <a href="<?= BASE_URL ?>/usuario/paginas/biblioteca/biblioteca.php" class="nav-link <?php echo ($current_page == 'biblioteca.php') ? 'active' : ''; ?>">Biblioteca</a>
             </li>
             <li class="nav-item">
-                <a href="../egresados/egresados.php" class="nav-link <?php echo ($current_page == 'egresados.php') ? 'active' : ''; ?>">Egresados</a>
+                <a href="<?= BASE_URL ?>/usuario/paginas/egresados/egresados.php" class="nav-link <?php echo ($current_page == 'egresados.php') ? 'active' : ''; ?>">Egresados</a>
             </li>
             <li class="nav-item">
-                <a href="../PlanEstudio/PlanEstudio.php" class="nav-link <?php echo ($current_page == 'Plan_estudio.php') ? 'active' : ''; ?>">Plan de Estudio</a>
+                <a href="<?= BASE_URL ?>/usuario/paginas/PlanEstudio/PlanEstudio.php" class="nav-link <?php echo ($current_page == 'Plan_estudio.php') ? 'active' : ''; ?>">Plan de Estudio</a>
             </li>
         </ul>
     </div>
