@@ -1,0 +1,60 @@
+:root {
+    --biblioteca-primary:   #2e7d32; /* Verde principal */
+    --biblioteca-secondary: #66bb6a; /* Verde claro */
+    --biblioteca-light:     #e8f5e9; /* Verde muy claro */
+    --biblioteca-dark:      #1b5e20; /* Verde oscuro */
+    --biblioteca-accent:    #43a047; /* Verde acento */
+}
+
+header {
+    background-color: var(--biblioteca-dark);
+}
+
+.logo h1 {
+    color: white;
+}
+
+.main-nav .nav-link.active {
+    color: var(--biblioteca-secondary);
+    border-bottom: 3px solid var(--biblioteca-secondary);
+}
+
+.intro-section {
+    margin-top: 5px;
+    background: linear-gradient(
+        to right,
+        var(--biblioteca-dark),
+        var(--biblioteca-primary)
+    );
+    color: white;
+    padding: 3rem 0;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.intro-section .section-header h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.intro-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.container img{
+    border-radius: 10px;
+}

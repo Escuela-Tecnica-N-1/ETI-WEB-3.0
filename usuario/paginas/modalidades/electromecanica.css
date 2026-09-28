@@ -1,7 +1,7 @@
 :root {
     --electromecanica-primary:   #512e92;
     --electromecanica-secondary: #7c4fce; 
-    --electromecanica-light:     rgb(227, 211, 255); 
+    --electromecanica-light:     #e3d3ff; 
     --electromecanica-dark:      #1d054b; 
     --electromecanica-accent:    #6337b6; 
 }
