@@ -4,23 +4,23 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link">Institucional <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="../../../autoridades.php">Autoridades</a></li>
+                    <li><a href="../autoridades/autoridades.php">Autoridades</a></li>
                     <li><a href="../../../informacion-administrativa.php">Información Administrativa</a></li>
                     <li><a href="../../../acuerdoConvivencia.pdf" target="_blank">Acuerdo de convivencia</a></li>
                     <li><a href="../../../profesores.php">Profesores</a></li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="../cicloBasico/ciclobasico.php" class="nav-link <?php echo ($current_page == 'ciclobasico.php') ? 'active' : ''; ?>">Ciclo Básico</a>
+                <a href="../../../usuario/paginas/cicloBasico/ciclobasico.php" class="nav-link <?php echo ($current_page == 'ciclobasico.php') ? 'active' : ''; ?>">Ciclo Básico</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
                 <a href="../cicloSuperior/ciclosuperior.php" class="nav-link <?php echo ($current_page == 'ciclosuperior.php') ? 'active' : ''; ?>">Ciclo Superior</a>
             </li>
             <li class="nav-item">
-                <a href="../egresados/egresados.php" class="nav-link <?php echo ($current_page == 'egresados.php') ? 'active' : ''; ?>">Egresados</a>
+                <a href="../biblioteca/biblioteca.php" class="nav-link <?php echo ($current_page == 'biblioteca.php') ? 'active' : ''; ?>">Biblioteca</a>
             </li>
             <li class="nav-item">
-                <a href="../biblioteca/biblioteca.php" class="nav-link <?php echo ($current_page == 'biblioteca.php') ? 'active' : ''; ?>">Biblioteca</a>
+                <a href="../egresados/egresados.php" class="nav-link <?php echo ($current_page == 'egresados.php') ? 'active' : ''; ?>">Egresados</a>
             </li>
             <li class="nav-item">
                 <a href="../PlanEstudio/PlanEstudio.php" class="nav-link <?php echo ($current_page == 'Plan_estudio.php') ? 'active' : ''; ?>">Plan de Estudio</a>

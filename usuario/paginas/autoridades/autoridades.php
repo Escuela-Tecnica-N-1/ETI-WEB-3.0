@@ -17,7 +17,11 @@
 
     <?php include '../componentes/header.php'; ?>
     <?php include '../componentes/navbar.php'; ?>
-    <?php include '../componentes/404.php'; ?>
+    
+    <main>
+        <?php include '../componentes/404.php'; ?>
+    </main>    
+    
     <?php include '../componentes/footer.php'; ?>
 
 </body>
