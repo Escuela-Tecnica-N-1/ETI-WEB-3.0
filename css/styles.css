@@ -101,33 +101,6 @@ header {
     margin: 0;
 }
 
-<<<<<<< Updated upstream
-.search-container {
-    display: flex;
-    align-items: center;
-}
-
-.search-input {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 0.25rem 0 0 0.25rem;
-    width: 200px;
-}
-
-.search-button {
-    background-color: white;
-    border: none;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0 0.25rem 0.25rem 0;
-    cursor: pointer;
-}
-
-.search-button i {
-    color: var(--primary-dark);
-}
-=======
-
->>>>>>> Stashed changes
 
 /* Mobile menu button - Only visible on mobile */
 .mobile-menu {
