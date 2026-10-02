@@ -8,19 +8,25 @@
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/styles.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/login.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/informacion-administrativa.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="icon" href="<?= BASE_URL ?>/usuario/imagenes/escudo.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" href="<?= BASE_URL ?>/usuario/imagenes/escudo.png" type="image/png">
+
 </head>
 
 <body>
     <?php include BASE_PATH . '/usuario/paginas/componentes/header.php'; ?>
-
     <?php include BASE_PATH . '/usuario/paginas/componentes/navbar.php'; ?>
 
-    <?php include BASE_PATH . '/usuario/paginas/componentes/404.php'; ?>
+    <main>
+        <?php include BASE_PATH . '/usuario/paginas/componentes/404.php'; ?>
+        <!-- hacer la pagina aca y borrar el 404.php -->
+
+    </main>
 
     <?php include BASE_PATH . '/usuario/paginas/componentes/footer.php'; ?>
 </body>
