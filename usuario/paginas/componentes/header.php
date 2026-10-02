@@ -1,6 +1,4 @@
-<?php
-require_once __DIR__ . '/../../../config/config.php';
-?>
+<?php require_once __DIR__ . '/../../../config/config.php'; ?>
 <header>
   <div class="container">
     <div class="header-content">
