@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../../../config/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,22 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca - Escuela Técnica</title>
-    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/styles.css">
     <link rel="stylesheet" href="biblioteca.css">
 
-    <link rel="stylesheet" href="biblioteca.css">
-
-    <link rel="icon" href="../../imagenes/escudo.png" type="image/png">
+    <link rel="icon" href="<?= BASE_URL ?>/usuario/imagenes/escudo.png" type="image/png">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     
-    <?php include '../componentes/header.php'; ?>
+    <?php include BASE_PATH . '/usuario/paginas/componentes/header.php'; ?>
 
-    <?php include '../componentes/navbar.php'; ?>
+    <?php include BASE_PATH . '/usuario/paginas/componentes/navbar.php'; ?>
 
-</body>
     <main>
         <div class="container">
             <section class="intro-section">
@@ -42,11 +40,11 @@
                     </p>
                 </div>
             </section>
-            <img src="../../imagenes/WhatsApp Image 2026-08-10 at 14.42.10.jpeg" alt="Descripción de la imagen">
+            <img src="<?= BASE_URL ?>/usuario/imagenes/WhatsApp Image 2026-08-10 at 14.42.10.jpeg" alt="Descripción de la imagen">
 
     </main>
 
-    <?php include '../componentes/footer.php'; ?>
+    <?php include BASE_PATH . '/usuario/paginas/componentes/footer.php'; ?>
 
 </body>
 </html>

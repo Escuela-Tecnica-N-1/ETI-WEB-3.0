@@ -261,7 +261,7 @@ if (!empty($_COOKIE['token'])) {
                 </section>
         
     <!-- Footer -->
-    <?php include 'usuario/paginas/componentes/footer.php'; ?>
+    <?php include BASE_PATH . '/usuario/paginas/componentes/footer.php'; ?>
     </main>
 
 
