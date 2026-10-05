@@ -26,6 +26,7 @@
         <?php include BASE_PATH . '/usuario/paginas/componentes/404.php'; ?>
         <!-- hacer la pagina aca y borrar el 404.php -->
 
+        <img src="usuario/imagenes/enproceso.gif" alt="" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
     </main>
 
     <?php include BASE_PATH . '/usuario/paginas/componentes/footer.php'; ?>

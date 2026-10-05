@@ -7,10 +7,10 @@ require_once __DIR__ . '/../../../config/config.php';
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link">Institucional <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="../autoridades/autoridades.php">Autoridades</a></li>
-                    <li><a href="../../../informacion-administrativa.php">Información Administrativa</a></li>
-                    <li><a href="../../../acuerdoConvivencia.pdf" target="_blank">Acuerdo de convivencia</a></li>
-                    <li><a href="../../../profesores.php">Profesores</a></li>
+                    <li><a href="<?= BASE_URL ?>/usuario/paginas/autoridades/autoridades.php">Autoridades</a></li>
+                    <li><a href="<?= BASE_URL ?>/informacion-administrativa.php">Información Administrativa</a></li>
+                    <li><a href="<?= BASE_URL ?>/acuerdoConvivencia.pdf" target="_blank">Acuerdo de convivencia</a></li>
+                    <li><a href="<?= BASE_URL ?>/profesores.php">Profesores</a></li>
                 </ul>
             </li>
             <li class="nav-item">

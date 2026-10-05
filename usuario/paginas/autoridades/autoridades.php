@@ -18,14 +18,14 @@
 
 <body>
 
-    <?php include BASE_PATH . '/usuario/componentes/header.php'; ?>
-    <?php include BASE_PATH . '/usuario/componentes/navbar.php'; ?>
+    <?php include BASE_PATH . '/usuario/paginas/componentes/header.php'; ?>
+    <?php include BASE_PATH . '/usuario/paginas/componentes/navbar.php'; ?>
     
     <main>
-        <?php include BASE_PATH . '/usuario/componentes/404.php'; ?>
+        <?php include BASE_PATH . '/usuario/paginas/componentes/404.php'; ?>
     </main>    
     
-    <?php include BASE_PATH . '/usuario/componentes/footer.php'; ?>
+    <?php include BASE_PATH . '/usuario/paginas/componentes/footer.php'; ?>
 
 </body>
 
