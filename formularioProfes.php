@@ -154,20 +154,12 @@
     formData.append('anio', document.getElementById('año').value);
     formData.append('taskName', document.getElementById('nombreTarea').value);
 
-    const token = localStorage.getItem('token');
     const mensaje = document.getElementById('mensaje');
 
-    if (!token) {
-      mensaje.innerText = 'Debe iniciar sesión para subir archivos.';
-      return;
-    }
-
     try {
-      const response = await fetch('http://localhost:3000/api/upload', {
+      const response = await fetch('/api/upload', {
         method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`
-        },
+        credentials: 'include',
         body: formData
       });
 
