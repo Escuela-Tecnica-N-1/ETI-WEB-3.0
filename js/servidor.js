@@ -78,3 +78,45 @@ forgotForm.addEventListener('submit', async (e) => {
     mensajeForgot.style.color = 'red';
   }
 });
+
+
+// ─── Login / Registro ────────────────────────────────────────────────
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const nombre = nombreInput.value.trim();
+  const email = emailInput.value.trim();
+  const contrasena = passwordInput.value.trim();
+
+  const endpoint = esRegistro ? 'register' : 'login';
+  const payload = esRegistro ? { nombre, email, contrasena } : { email, contrasena };
+
+  try {
+    const res = await fetch(`/api/${endpoint}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify(payload)
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      mensaje.textContent = esRegistro
+        ? 'Registro exitoso. Ahora puedes iniciar sesión.'
+        : 'Inicio de sesión exitoso.';
+      mensaje.style.color = 'green';
+
+      if (!esRegistro) {
+        window.location.href = 'index.php';
+      }
+    } else {
+      mensaje.textContent = data.message || 'Ocurrió un error.';
+      mensaje.style.color = 'red';
+    }
+  } catch (err) {
+    console.error(err);
+    mensaje.textContent = 'Error de conexión con el servidor.';
+    mensaje.style.color = 'red';
+  }
+});
