@@ -1,20 +1,22 @@
+<?php require_once __DIR__ . '/../../../config/config.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Técnico en Electromecánica - Escuela Técnica</title>
-    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/styles.css">
     <link rel="stylesheet" href="electromecanica.css">
-    <link rel="icon" href="../../imagenes/escudo.png" type="image/png">
+    <link rel="icon" href="<?= BASE_URL ?>/usuario/imagenes/escudo.png" type="image/png">
+
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head> 
 <body>
 
-    <?php include '../componentes/header.php'; ?>
+    <?php include BASE_PATH . '/usuario/paginas/componentes/header.php'; ?>
 
-    <?php include '../componentes/navbar.php'; ?>
+    <?php include BASE_PATH . '/usuario/paginas/componentes/navbar.php'; ?>
 
     <main>
         <div class="container">
@@ -36,7 +38,7 @@
                 <div class="subjects-grid">
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="../../imagenes/electro/Electro Técnica y Electrónica.jpg" alt="Electrotecnia">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/electro/Electro Técnica y Electrónica.jpg" alt="Electrotecnia">
                         </div>
                         <div class="subject-content">
                             <h3>Electrotecnia</h3>
@@ -46,7 +48,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="../../imagenes/electro/Mecanica y Mecanismo.jpg" alt="Mecánica Técnica">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/electro/Mecanica y Mecanismo.jpg" alt="Mecánica Técnica">
                         </div>
                         <div class="subject-content">
                             <h3>Mecánica Técnica</h3>
@@ -56,7 +58,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="../../imagenes/electro/Maquinas Electricas y Automatismo.jpg" alt="Máquinas Eléctricas">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/electro/Maquinas Electricas y Automatismo.jpg" alt="Máquinas Eléctricas">
                         </div>
                         <div class="subject-content">
                             <h3>Máquinas Eléctricas</h3>
@@ -66,7 +68,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="../../imagenes/electro/Emprendimientos Productivos y de Desarrollo Industrial.jpg" alt="Automatización Industrial">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/electro/Emprendimientos Productivos y de Desarrollo Industrial.jpg" alt="Automatización Industrial">
                         </div>
                         <div class="subject-content">
                             <h3>Automatización Industrial</h3>
@@ -76,7 +78,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="../../imagenes/electro/Mantenimiento y Montaje Eléctrico.webp" alt="Instalaciones Eléctricas">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/electro/Mantenimiento y Montaje Eléctrico.webp" alt="Instalaciones Eléctricas">
                         </div>
                         <div class="subject-content">
                             <h3>Instalaciones Eléctricas</h3>
@@ -86,7 +88,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="../../imagenes/electro/Electrónica Industrial.webp" alt="Electrónica Industrial">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/electro/Electrónica Industrial.webp" alt="Electrónica Industrial">
                         </div>
                         <div class="subject-content">
                             <h3>Electrónica Industrial</h3>
@@ -95,7 +97,7 @@
                     </div>
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="../../imagenes/electro/Resistencia y Enseñanza de los Materiales.jpg" alt="Resistencia y Enseñanza de los Materiales">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/electro/Resistencia y Enseñanza de los Materiales.jpg" alt="Resistencia y Enseñanza de los Materiales">
                         </div>
                         <div class="subject-content">
                             <h3>Resistencia y Enseñanza de los Materiales</h3>
@@ -105,7 +107,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="../../imagenes/electro/Mediciones Electricas.jpeg" alt="Sistemas de Control">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/electro/Mediciones Electricas.jpeg" alt="Sistemas de Control">
                         </div>
                         <div class="subject-content">
                             <h3>Sistemas de Control</h3>
@@ -115,7 +117,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="../../imagenes/electro/Diseño y Procesamiento Mecanico.jpg" alt="Mantenimiento Industrial">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/electro/Diseño y Procesamiento Mecanico.jpg" alt="Mantenimiento Industrial">
                         </div>
                         <div class="subject-content">
                             <h3>Mantenimiento Industrial</h3>
@@ -125,7 +127,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="../../imagenes/electro/diseño_cad.jpg" alt="Diseño Asistido por Computadora">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/electro/diseño_cad.jpg" alt="Diseño Asistido por Computadora">
                         </div>
                         <div class="subject-content">
                             <h3>Diseño Asistido por Computadora (CAD)</h3>
@@ -135,7 +137,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="../../imagenes/electro/Laboratorio de Mediciones y de Control de Calidad.jpg" alt="Procesos de Manufactura">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/electro/Laboratorio de Mediciones y de Control de Calidad.jpg" alt="Procesos de Manufactura">
                         </div>
                         <div class="subject-content">
                             <h3>Procesos de Manufactura</h3>
@@ -145,7 +147,7 @@
 
                     <div class="subject-card">
                         <div class="subject-image">
-                            <img src="../../imagenes/electro/Práctica Profesional del Sector Electromecánico.jpg" alt="Practicas Profesionalizantes">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/electro/Práctica Profesional del Sector Electromecánico.jpg" alt="Practicas Profesionalizantes">
                         </div>
                         <div class="subject-content">
                             <h3>Practicas Profesionalizantes</h3>
@@ -175,7 +177,7 @@
     </main>
 
     <!-- Footer -->
-<?php include '../componentes/footer.php'; ?>
+<?php include BASE_PATH . '/usuario/paginas/componentes/footer.php'; ?>
 
     <script>
         // Set current year in footer

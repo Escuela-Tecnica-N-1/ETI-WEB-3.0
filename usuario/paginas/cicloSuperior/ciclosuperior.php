@@ -53,7 +53,7 @@
                                 <li><i class="fas fa-chevron-right"></i> Redes y seguridad informática</li>
                                 <li><i class="fas fa-chevron-right"></i> Bases de datos y sistemas de información</li>
                             </ul>
-                            <a href="<?= BASE_URL ?>/usuario/modalidades/informatica.php"><button class="btn btn-blue">Explorar Informática</button></a>
+                            <a href="<?= BASE_URL ?>/usuario/paginas/modalidades/informatica.php"><button class="btn btn-blue">Explorar Informática</button></a>
                         </div>
 
                         <div class="modality-card electromecanica">
@@ -68,7 +68,7 @@
                                 <li><i class="fas fa-chevron-right"></i> Mecánica industrial y automatización</li>
                                 <li><i class="fas fa-chevron-right"></i> Diseño asistido por computadora (CAD)</li>
                             </ul>
-                            <a href="<?= BASE_URL ?>/usuario/modalidades/electromecanica.php"><button class="btn btn-amber">Explorar Electromecánica</button></a>
+                            <a href="<?= BASE_URL ?>/usuario/paginas/modalidades/electromecanica.php"><button class="btn btn-amber">Explorar Electromecánica</button></a>
                         </div>
                     </div>
                 </div>

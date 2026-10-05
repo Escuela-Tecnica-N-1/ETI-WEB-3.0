@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../../../config/config.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,16 +8,16 @@
     <title>Plan de Estudios</title>
 
     <link rel="stylesheet" href="PlanEstudio.css">
-    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="icon" href="../../imagenes/escudo.png" type="image/png">
+    <link rel="icon" href="<?= BASE_URL ?>/usuario/imagenes/escudo.png" type="image/png">
 </head>
 
 <body>
 
-  <?php include '../componentes/header.php'; ?>
+  <?php include BASE_PATH . '/usuario/paginas/componentes/header.php'; ?>
 
-  <?php include '../componentes/navbar.php'; ?>
+  <?php include BASE_PATH . '/usuario/paginas/componentes/navbar.php'; ?>
 
 <main>
   <div class="container">
@@ -63,7 +64,7 @@
   </div>
 </main>
 
-    <?php include '../componentes/footer.php'; ?>
+    <?php include BASE_PATH . '/usuario/paginas/componentes/footer.php'; ?>
 
     <script src="PlanEstudio.js"></script>
 

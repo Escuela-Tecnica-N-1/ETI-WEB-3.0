@@ -1,6 +1,7 @@
 <?php
+require_once __DIR__ . '/../../../config/config.php';
 
-$carpetaNoticias = __DIR__ . '/../../imagenes/Noticias';
+$carpetaNoticias = BASE_PATH . '/usuario/imagenes/Noticias';
 
 if (!is_dir($carpetaNoticias)) {
     echo json_encode([]);
