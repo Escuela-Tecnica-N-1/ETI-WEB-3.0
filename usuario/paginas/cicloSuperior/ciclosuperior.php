@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ciclo Superior - Escuela Técnica</title>
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/styles.css">
-    <!-- aca deberia ir cicloSuperior.css, debe hacerse -->
-    <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/paginas/modalidades/informatica.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/paginas/cicloSuperior/cicloSuperior.css">
 
     <link rel="icon" href="<?= BASE_URL ?>/usuario/imagenes/escudo.png" type="image/png">
     <!-- Font Awesome for icons -->

@@ -10,9 +10,6 @@ header {
     background-color: var(--informatica-dark);
 }
 
-.logo h1 {
-    color: white;
-}
 
 /* Navigation active link for informatica */
 .main-nav .nav-link.active {
@@ -53,10 +50,6 @@ header {
     padding: 2rem 0 4rem;
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
 
 .section-header h2 {
     font-size: 2rem;
