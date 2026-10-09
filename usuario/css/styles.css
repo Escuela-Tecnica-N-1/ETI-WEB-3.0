@@ -703,11 +703,6 @@ footer {
     }
 }
 
-@media (max-width: 991px) {
-    .search-input {
-        width: 150px;
-    }
-}
 
 @media (max-width: 768px) {
 /* Show mobile menu button */
