@@ -475,10 +475,6 @@ header {
     font-size: 0.75rem;
 }
 
-/* Modalities Section */
-.modalities-section {
-    padding: 3rem 0;
-}
 
 .section-header {
     text-align: center;
@@ -496,26 +492,6 @@ header {
     margin: 0 auto;
 }
 
-.modalities-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
-
-.modality-card {
-    position: relative;
-    border: 1px solid var(--border-color);
-    border-radius: 0.5rem;
-    overflow: hidden;
-    background-color: var(--bg-white);
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-    transition: box-shadow 1s ease;
-}
-
-.modality-card:hover {
-    box-shadow: var(--shadow-lg);
-}
 
 .informatica:hover {
     background-color: rgba(3, 105, 161, 0.05);
@@ -525,47 +501,6 @@ header {
     background-color: rgba(123, 79, 206, 0.05);
 }
 
-.modality-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 9999px;
-    margin-bottom: 1rem;
-}
-
-.informatica .modality-icon {
-    background-color: #dbeafe;
-    color: var(--primary-color);
-}
-
-.electromecanica .modality-icon {
-    background-color: #fef3c7;
-    background-color: var(--secondary-light);
-    color: var(--secondary-color);
-}
-
-.modality-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-.modality-card p {
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-}
-
-.modality-card ul {
-    margin-bottom: 1.5rem;
-}
-
-.modality-card ul li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    font-size: 0.875rem;
-}
 
 .informatica ul li i {
     color: var(--primary-light);
@@ -687,10 +622,6 @@ footer {
         grid-template-columns: 1fr 1fr;
     }
 
-    .modalities-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
     .footer-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -786,11 +717,6 @@ footer {
     
 /* Hide desktop navigation */
     .main-nav {
-        display: none;
-    }
-    
-/* Adjust header for mobile */
-    .search-container {
         display: none;
     }
     
