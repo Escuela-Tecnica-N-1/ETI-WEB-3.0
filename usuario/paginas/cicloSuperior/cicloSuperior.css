@@ -55,6 +55,24 @@
     background-color: var(--ciclo-superior-secondary);
 }
 
+.btn-blue {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-blue:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-amber {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-amber:hover {
+    background-color: var(--secondary-dark);
+}
+
 @media (min-width: 768px) {
 
     .intro-content {
