@@ -54,6 +54,42 @@ require_once __DIR__ . '/../../../config/config.php';
   .overlay {
     display: none;
   }
+  
+  /* Dropdown styles */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: var(--shadow);
+    border-radius: 0.25rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+}
 
   /* Show only on mobile */
   @media (max-width: 768px) {

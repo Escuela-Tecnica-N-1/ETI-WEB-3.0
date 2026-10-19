@@ -11,10 +11,6 @@ header {
     background-color: var(--electromecanica-dark);
 }
 
-.logo h1 {
-    color: white;
-}
-
 /* Navigation active link for electromecanica */
 .main-nav .nav-link.active {
     color: var(--electromecanica-secondary);

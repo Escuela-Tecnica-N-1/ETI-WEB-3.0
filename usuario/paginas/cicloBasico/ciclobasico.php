@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ciclo Básico - Escuela Técnica</title>
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/styles.css">
-    <!-- aca deberia ir cicloBasico.css, debe hacerse -->
-    <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/paginas/modalidades/informatica.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/paginas/cicloBasico/ciclobasico.css">
 
     <link rel="icon" href="<?= BASE_URL ?>/usuario/imagenes/escudo.png" type="image/png">
     <!-- Font Awesome for icons -->
