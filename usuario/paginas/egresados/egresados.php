@@ -252,6 +252,10 @@
                 </div>
 
                 <div class="carousel-item">
+                    <img src="<?= BASE_URL ?>/usuario/imagenes/egresados/2024.png" class="d-block w-100" alt="2024">
+                </div>
+
+                <div class="carousel-item">
                     <img src="<?= BASE_URL ?>/usuario/imagenes/egresados/2025.png" class="d-block w-100" alt="2025">
                 </div>
             
