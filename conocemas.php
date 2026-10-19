@@ -14,7 +14,8 @@
 </head>
 
 <body>
-    
+    <?php $header_conocemas = true; ?>
+
     <?php include 'header.php'; ?>
 
     <?php include 'navbar.php'; ?>

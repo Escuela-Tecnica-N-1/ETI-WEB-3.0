@@ -1,0 +1,645 @@
+.page {
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 20px;
+    background: #20b5bf;
+    width: 200px;
+    margin: 10px auto;
+    position: relative;
+}
+
+  .fold {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-width: 0;
+    border-style: solid;
+    background: var(--primary-color);
+    display: block;
+    border-color: transparent #fff transparent #fff;
+    -webkit-transition: border-width 0.2s ease-out;
+    -moz-transition: border-width 0.2s ease-out;
+    -ms-transition: border-width 0.2s ease-out;
+    -o-transition: border-width 0.2s ease-out;
+    transition: border-width 0.2s ease-out;
+  }
+  
+  .page:hover, .page2:hover {
+    cursor: pointer;
+  }
+  
+  .page:hover .fold, .page2:hover .fold2 {
+    border-width: 0px 30px 30px 0px;
+  }
+  
+  /* Estilo para el botón de login */
+  .page2 {
+    font-family: arial, sans-serif;
+    color: #20b5bf;
+    font-weight: bold;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 15px;
+    background: white;
+    width: 100px;
+    border: 4px solid #20b5bf;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .fold2 {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    border-width: 0;
+    border-style: solid;
+    background: #72cbd1;
+    display: block;
+    border-color: transparent #fff transparent #fff;
+    -webkit-transition: border-width 0.2s ease-out;
+    -moz-transition: border-width 0.2s ease-out;
+    -ms-transition: border-width 0.2s ease-out;
+    -o-transition: border-width 0.2s ease-out;
+    transition: border-width 0.2s ease-out;
+  }
+  
+  /* Icono dentro del botón de login */
+  .page2 i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+  
+    /* Estilo para la esquina doblada */
+    .corner-fold {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    z-index: 1000;
+    cursor: pointer;
+    overflow: hidden;
+    }
+    
+    .fold {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    /* Hacemos que la esquina sea visible por defecto con un tamaño inicial */
+    border-width: 0 50px 50px 0;
+    border-color: transparent #ffffff transparent transparent;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    /* Añadimos una sombra sutil para dar profundidad */
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.15);
+    }  
+
+    /* Al hacer hover, la esquina se hace más grande */
+.corner-fold:hover .fold {
+    border-width: 0 100px 100px 0;
+    }
+
+    /* Añadimos un borde interno para simular el doblez del papel */
+.fold::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.2) 50%);
+    transform: translate(-50px, 0);
+    }
+
+/* Icono de login visible parcialmente por defecto */
+.login-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    /* Cambia este color al que prefieras */
+    color: #ffffff; /* Actualmente es blanco */
+    font-size: 24px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1002;
+    }
+
+    .corner-fold:hover .login-icon {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+/* Añadimos un efecto de pulso sutil para llamar la atención */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+    }    
+        
+    .fold {
+        animation: pulse 2s infinite ease-in-out;
+        }
+        
+    .corner-fold:hover .fold {
+        animation: none;
+        }
+
+
+.corner-fold:hover .fold {
+    border-width: 0 100px 100px 0;
+}
+
+/* Icono de login oculto bajo la esquina */
+.login-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: var(--primary-color);
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1002;
+}
+
+.corner-fold:hover .login-icon {
+    opacity: 1;
+}
+
+  /* Resto del CSS para el modal de login */
+  .login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.login-modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Contenedor principal */
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.login-modal.hidden .login-container {
+    transform: translateY(-50px);
+}
+
+/* Botón de cerrar */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #333;
+    transform: rotate(90deg);
+}
+
+/* Encabezado */
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    color: #333;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #3454e2, #241aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.login-header p {
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Formulario */
+#auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+input::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+/* Botón principal */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #3454e2, #241aaa);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Switch de formulario */
+.switch {
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.switch p {
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.switch:hover p {
+    background: rgba(102, 126, 234, 0.1);
+    color: #3454e2;
+}
+
+/* Mensaje */
+#mensaje {
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#mensaje.error {
+    background: rgba(255, 99, 99, 0.1);
+    color: #ff6363;
+    border: 1px solid rgba(255, 99, 99, 0.2);
+}
+
+#mensaje.success {
+    background: rgba(72, 187, 120, 0.1);
+    color: #48bb78;
+    border: 1px solid rgba(72, 187, 120, 0.2);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-container {
+        margin: 20px;
+        padding: 30px 25px;
+        max-width: none;
+    }
+    
+    .login-header h2 {
+        font-size: 24px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+    
+    button[type="submit"] {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+/* Folded Corner Styles */
+.folded-corner {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, transparent 30px, #0369a1 0);
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.folded-corner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 30px 0;
+    border-color: transparent #fff transparent transparent;
+    z-index: 1001;
+}
+
+.folded-corner:hover {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, transparent 35px, #075985 0);
+}
+
+.corner-content {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 24px;
+}
+
+/* Login Modal Styles */
+.login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.login-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.login-container {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.login-modal.active .login-container {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #64748b;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #0369a1;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-header h2 {
+    color: #0369a1;
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #0369a1;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 8px;
+}
+
+.remember-me label {
+    position: static;
+    transform: none;
+    color: #1e293b;
+    font-size: 14px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #0369a1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #075985;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.forgot-password a {
+    color: #0369a1;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .folded-corner {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, transparent 20px, #0369a1 0);
+    }
+    
+    .folded-corner::before {
+        border-width: 0 20px 20px 0;
+    }
+    
+    .folded-corner:hover {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, transparent 25px, #075985 0);
+    }
+    
+    .corner-content {
+        bottom: 10px;
+        left: 10px;
+        font-size: 18px;
+    }
+}

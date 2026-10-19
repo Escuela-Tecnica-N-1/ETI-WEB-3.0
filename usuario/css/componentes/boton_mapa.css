@@ -1,0 +1,139 @@
+.map-btn-wrapper {
+  --btn-color:#0284c7;
+  --text-color: #fff;
+  --transition-dur: 0.3s;
+
+  position: relative;
+  display: flex;
+
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+
+  user-select: none;
+  overflow: hidden;
+  border-radius: 50ch;
+
+  box-shadow: none;
+
+  transition: transform var(--transition-dur) ease;
+}
+
+.map-btn {
+  text-decoration: none;
+  color: inherit; 
+  cursor: pointer;
+  padding: 1em 1.5em 1em 3.5em;
+
+  border-radius: 50ch;
+
+  background-color: var(--btn-color);
+
+  font-weight: 600;
+  color: var(--text-color);
+
+  transition:
+    color var(--transition-dur) ease-in-out,
+    background-color var(--transition-dur) ease-in-out;
+}
+
+.pinpoint {
+  pointer-events: none;
+  position: absolute;
+  height: 60%;
+  aspect-ratio: 1;
+  top: 20%;
+  left: 0.75em;
+
+  border-radius: 50% 50% 50% 50%;
+  background-color: var(--text-color);
+  transform: rotateZ(45deg);
+
+  mask-image: radial-gradient(circle at center, #0000 0%, #0000 32%, #fff 36%);
+  filter: blur(0.25px);
+  transition:
+    background-color var(--transition-dur) ease-in-out,
+    transform var(--transition-dur) ease-in-out,
+    border-radius calc(var(--transition-dur) + 0.1s) ease;
+  z-index: 1;
+}
+
+.map::after {
+  content: "";
+  top: -40;
+  left: 12;
+  width: 100%;
+  height: 200%;
+  background-color: var(--land-color);
+  position: absolute;
+  filter: url(#land);
+  box-shadow: inset 0 0 48px 24px var(--veg-color);
+  z-index: 0;
+}
+.fold-1,
+.fold-2,
+.fold-3,
+.fold-4 {
+  mask-image: linear-gradient(to top, #fff, 97%, #0000);
+  overflow: hidden;
+}
+
+.fold-1 {
+  left: -60px;
+  transform: rotateY(10deg) translateZ(30px);
+}
+.fold-2 {
+  left: 60px;
+  transform: rotateY(-10deg) translateZ(10px);
+}
+.fold-3 {
+  left: -169px;
+  transform: rotateY(-15deg) translateZ(-1px);
+}
+.fold-4 {
+  left: 166px;
+  transform: rotateY(15deg) translateZ(31px);
+}
+.fold-1::before,
+.fold-2::before,
+.fold-3::before,
+.fold-4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 10px 16px 3px #0004;
+  z-index: 1;
+}
+
+/* Hover states */
+.map-btn-wrapper:hover {
+  transform: none;
+}
+.map-btn:hover {
+  background-color: var(--text-color);
+  color: #0284c7;
+}
+.map-btn:hover + .pinpoint {
+  background-color: var(--btn-color);
+  border-radius: 50% 50% 0 50%;
+  transform: rotateZ(45deg) translate(-0.3em, -0.3em);
+}
+.map-btn:hover ~ .map-container {
+  transform: perspective(100px) rotateX(35deg) scaleX(0.85);
+  opacity: 1;
+}
+
+/* Active states */
+.map-btn-wrapper:active {
+  transform: scale(1.02) translateY(0.2em);
+}
+.map-btn:active + .pinpoint {
+  transform: rotateZ(45deg) translate(0em, 0em);
+  transition-duration: calc(var(--transition-dur) * 0.5);
+}
+.map-btn:active ~ .map-container {
+  transform: perspective(95px) rotateX(35deg) scaleX(0.85);
+  transition-duration: calc(var(--transition-dur) * 0.5);
+}

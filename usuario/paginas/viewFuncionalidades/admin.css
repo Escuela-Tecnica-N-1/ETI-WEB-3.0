@@ -1,0 +1,489 @@
+/* Admin Panel Styles */
+.admin-body {
+    background-color: #f8fafc;
+    min-height: 100vh;
+}
+
+/* Admin Header */
+.admin-header {
+    background-color: #0369a1;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-logo {
+    display: flex;
+    align-items: center;
+}
+
+.admin-logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.admin-logo h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.admin-user span {
+    margin-right: 1rem;
+}
+
+.logout-btn {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Admin Container */
+.admin-container {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+/* Admin Sidebar */
+.admin-sidebar {
+    width: 250px;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.admin-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.admin-nav li {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-nav li.active {
+    background-color: #f1f5f9;
+}
+
+.admin-nav li.active a {
+    color: #0369a1;
+    font-weight: 600;
+}
+
+.admin-nav a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.admin-nav a:hover {
+    background-color: #f8fafc;
+    color: #0369a1;
+}
+
+.admin-nav a i {
+    margin-right: 0.75rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Admin Main Content */
+.admin-main {
+    flex: 1;
+    padding: 2rem;
+}
+
+.admin-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+}
+
+.page-header h2 {
+    margin: 0 0 0.5rem 0;
+    color: #1e293b;
+}
+
+.page-header p {
+    margin: 0;
+    color: #64748b;
+}
+
+/* Dashboard Stats */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid #0369a1;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(3, 105, 161, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: #0369a1;
+    font-size: 1.5rem;
+}
+
+.stat-info h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+    color: #64748b;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+/* Recent Uploads Section */
+.recent-uploads {
+    margin-top: 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-header h3 {
+    margin: 0;
+    color: #1e293b;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+
+.btn i {
+    margin-right: 0.5rem;
+}
+
+.btn-primary {
+    background-color: #0369a1;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #075985;
+}
+
+/* Table Styles */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-table th {
+    background-color: #f8fafc;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.admin-table tr:hover {
+    background-color: #f8fafc;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+}
+
+.view-btn {
+    background-color: #0369a1;
+}
+
+.edit-btn {
+    background-color: #0891b2;
+}
+
+.delete-btn {
+    background-color: #dc2626;
+}
+
+/* Upload Form Styles */
+.upload-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.upload-area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-area.highlight {
+    border-color: #0369a1;
+    background-color: rgba(3, 105, 161, 0.05);
+}
+
+.upload-area.has-file {
+    border-style: solid;
+    border-color: #0369a1;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.upload-icon {
+    font-size: 3rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+}
+
+.upload-text .primary-text {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.upload-text .secondary-text {
+    color: #64748b;
+}
+
+.file-info {
+    margin-top: 1rem;
+}
+
+.selected-file {
+    display: flex;
+    align-items: center;
+    background-color: #f8fafc;
+    padding: 0.75rem;
+    border-radius: 4px;
+}
+
+.selected-file i {
+    font-size: 1.5rem;
+    color: #0369a1;
+    margin-right: 1rem;
+}
+
+.file-details {
+    flex: 1;
+    text-align: left;
+}
+
+.file-name {
+    display: block;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.file-size {
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+.remove-file {
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.remove-file:hover {
+    color: #dc2626;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #0369a1;
+}
+
+.upload-btn {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+}
+
+/* Alert Messages */
+.alert {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.alert-success {
+    background-color: #dcfce7;
+    color: #166534;
+    border-left: 4px solid #16a34a;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border-left: 4px solid #dc2626;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .stats-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column;
+    }
+    
+    .admin-sidebar {
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .admin-nav ul {
+        display: flex;
+        overflow-x: auto;
+    }
+    
+    .admin-nav li {
+        border-bottom: none;
+        border-right: 1px solid #f1f5f9;
+    }
+    
+    .admin-nav a {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .admin-nav a i {
+        margin-right: 0;
+        margin-bottom: 0.25rem;
+    }
+    
+    .admin-main {
+        padding: 1rem;
+    }
+    
+    .admin-content {
+        padding: 1rem;
+    }
+}
