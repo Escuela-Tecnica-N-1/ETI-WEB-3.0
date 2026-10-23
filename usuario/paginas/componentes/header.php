@@ -11,3 +11,7 @@
     </div>
   </div>
 </header>
+
+cambios en css
+cambios en header
+y archivo botonperfil.js
