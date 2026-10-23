@@ -268,7 +268,6 @@ if (!empty($_COOKIE['token'])) {
     <script src="usuario/script/servidor.js"></script>
     <script src="usuario/script/interfaz.js"></script>
 
-    <script src="usuario/script/utility/mapa.js"></script>
     <script src="usuario/script/utility/parallax.js"></script>
     <script src="usuario/script/utility/easteregg.js"></script>
     <script src="usuario/script/utility/estadisticas.js"></script>
