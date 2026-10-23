@@ -153,6 +153,7 @@ header {
     padding: 10px 15px;
     text-decoration: none;
     color: #333;
+    border-radius: 8px;
 }
 
 .menu-opciones a:hover {
