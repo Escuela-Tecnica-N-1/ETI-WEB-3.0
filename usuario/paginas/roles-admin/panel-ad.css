@@ -7,8 +7,9 @@
         background-color: #64748b;
         align-content:center;
     }
+    /*barra lateral y contenido*/
     .sidebar{
-        width:20%;
+        width:20vw;
         height:100vh;
         background-color: #1d054b;
         padding:10px;
@@ -85,4 +86,94 @@
         justify-content:space-between;
         background-color: rgb(119, 213, 244);
     }
-    
+    /*contenido y buscadores*/
+    .inicio{
+        width:80vw;
+        padding:20px;
+        font-size:larger;
+    }
+    .descripcion{
+        padding:10px;
+    }
+    /*conjunto. buscador y filtro de rol*/
+    .filtros{
+        display:flex;
+        flex-direction: row;
+        width:100%;
+        padding:20px;
+    }
+    /*filtro*/
+    .desp{
+        display:flex;
+        flex-direction:row;
+        padding-left:10px;
+    }
+    .dropdown{
+        width:140px;
+        height:40px;
+        font-size:16px;
+        border-radius:10px;
+        margin-left:20px;
+        margin-right:30px;
+    }
+    .dp-menu{
+        display:flex;
+        flex-direction:column;
+        position:absolute;
+        background-color:aliceblue;
+        box-shadow: 0px 0px 10px black;
+        border-radius:10px;
+        width:160px;
+        height:120px;
+        justify-content:center;
+    }
+    .drop-op{
+        width:100%;
+        text-align:center;
+        font-size:20px;
+        cursor:pointer;
+        color:grey;  
+    }
+    .drop-op:hover{
+        background-color: #0ea5e9;
+        color:white;
+    }
+
+    /*buscador*/
+    input{
+        border-radius:50px;
+        width:500px;
+        height:35px;
+        text-decoration-line: none;
+        font-size: 16px;
+        border:none;
+    }
+    /*lista de usuarios*/
+    .lista{
+        display:flex;
+        flex-direction:row;
+        padding:20px;
+        width:700px;
+        justify-content: space-between;
+        text-decoration:underline;
+    }
+    /*contenedor de usuario*/
+    .cont-box{
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        background-color:#737a85;
+        align-items: center;
+        height:60px;
+    }
+    .datos{
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        width:700px;
+        padding:20px;
+    }
+    .h6{
+        margin:5px;
+        width: 90px;
+        }
