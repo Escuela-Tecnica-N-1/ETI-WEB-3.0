@@ -7,7 +7,7 @@
     <title>Historia de la Escuela Técnica</title>
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/styles.css">
     <link rel="stylesheet" href="conoceMas.css">
-    <link rel="icon" href="<?= BASE_URL ?>/usuario/imagenes/escudo.png" type="image/png">
+    <link rel="icon" href="../../imagenes/logo-escuela-azull.png" type="image/png" alt="Logo de la escuela">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

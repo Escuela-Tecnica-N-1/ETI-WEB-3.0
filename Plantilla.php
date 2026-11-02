@@ -19,7 +19,7 @@
     
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/styles.css"> <!-- esto queda asi siempre -->
     <link rel="stylesheet" href="biblioteca.css"> <!-- se conecta al css especifico, si estan en la misma carpeta no usen base_url, sino usenlo. -->
-    <link rel="icon" href="<?= BASE_URL ?>/usuario/imagenes/escudo.png" type="image/png">
+    
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

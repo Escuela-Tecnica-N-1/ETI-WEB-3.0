@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="PlanEstudio.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="icon" href="<?= BASE_URL ?>/usuario/imagenes/escudo.png" type="image/png">
+    <link rel="icon" href="../../imagenes/logo-escuela-azull.png" type="image/png" alt="Logo de la escuela">
 </head>
 
 <body>

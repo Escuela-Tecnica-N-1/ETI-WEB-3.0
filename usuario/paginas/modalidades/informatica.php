@@ -7,7 +7,7 @@
     <title>Técnico en Informática - Escuela Técnica</title>
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/styles.css">
     <link rel="stylesheet" href="informatica.css">
-    <link rel="icon" href="<?= BASE_URL ?>/usuario/imagenes/escudo.png" type="image/png">
+    <link rel="icon" href="../../imagenes/logo-escuela-azull.png" type="image/png" alt="Logo de la escuela">
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
