@@ -10,6 +10,7 @@ $token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
     <title>Restablecer contraseña - Escuela Técnica</title>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/styles.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/paginas/viewFuncionalidades/reset-password.css">
 </head>
 <body>
@@ -22,7 +23,23 @@ $token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
 
         <div class="full-div">
         
-            <div class="full-div-inside">
+            <section class="welcome-section" aria-hidden="true">
+                <div class="container">
+                    <div class="welcome-grid">
+                        <div class="welcome-image">
+                            <img src="<?= BASE_URL ?>/usuario/imagenes/escuelafoto.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="full-div-inside full-div-reset-p">
+
+                <a class="button-goback" alt="Volver al inicio" href="<?= BASE_URL ?>/usuario/paginas/conoceMas/conoceMas.php" aria-label="Volver a Conoce más">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                    </svg>
+                </a>
 
                 <h1>Restablecer contraseña</h1>
                 <p>Inserta tu nueva contraseña. Recuerda guardarla en un lugar seguro.</p>
@@ -37,22 +54,8 @@ $token = isset($_GET['token']) ? htmlspecialchars($_GET['token']) : null;
                 </form>
 
                 <p id="mensaje"></p>
-
             </div>
-
         </div>
-
-        <section class="welcome-section"> <!-- FONDO CON FILTRO -->
-            <div class="container">
-                <div class="welcome-grid">
-
-                    <div class="welcome-image">
-                        <img src="../../../usuario/imagenes/escuelafoto.jpeg" alt="Escuela Técnica" id="fotoEsc">
-                    </div>
-
-                </div>
-            </div>
-        </section>
 
         <script>
             // El token viaja embebido acá porque PHP ya lo validó como presente
