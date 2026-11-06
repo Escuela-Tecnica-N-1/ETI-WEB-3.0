@@ -127,6 +127,26 @@ header {
     object-fit: cover;
 }
 
+/* Botón "Cuenta" (cuando no hay sesión) */
+.boton-cuenta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 999px;
+    background: white;
+    color: var(--primary-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-cuenta:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
 /* Menú desplegable */
 .menu-perfil, .boton-despleperfil {
     position: relative;

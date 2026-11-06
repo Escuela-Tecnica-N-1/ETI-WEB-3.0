@@ -108,7 +108,7 @@ form.addEventListener('submit', async (e) => {
       mensaje.style.color = 'green';
 
       if (!esRegistro) {
-        window.location.href = 'index.php';
+        window.location.reload();
       }
     } else {
       mensaje.textContent = data.message || 'Ocurrió un error.';

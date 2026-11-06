@@ -11,6 +11,27 @@ dotenv.config();
 const router = express.Router();
 const User = require('../models/User');
 
+// Crea el JWT y lo guarda en la cookie httpOnly. Lo usan login y register.
+function crearSesion(res, usuario) {
+  const token = jwt.sign(
+    {
+      id: usuario._id,
+      nombre: usuario.nombre,
+      email: usuario.email,
+      roles: usuario.roles
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: '2h' }
+  );
+
+  res.cookie('token', token, { // 'token' es el nombre de la cookie
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'Lax',
+    maxAge: 2 * 60 * 60 * 1000 // 2 horas, igual que el JWT
+  });
+}
+
 // POST /register
 router.post('/register', async (req, res) => {
   const { nombre, email, contrasena } = req.body;
