@@ -47,20 +47,23 @@
                 <script src="panel-fun.js"></script>
         </div>
         <div class="lista">
-            <h3>Usuario</h3>
-            <h3>Correo Electrónico</h3>
-            <h3>Roles</h3>
+            <div class="title">
+                <h3 class="tit-1">Usuario</h3>
+                <h3 class="tit-2">Correo Electronico</h3>
+                <h3 class="tit-3">Roles</h3>
+            </div>
+            <div class="cont-box">
+                <div class="d-user">
+                    <h6 class="tit-1 user" id="user-name">nombre segundo apellido</h6>
+                    <h6 class="tit-2 user" id="user-gm">correoelectronico@gmail.com</h6>
+                    <h6 class="tit-3 user" id="user-rol">administrador</h6>
+                </div>
+                <div class="op-icon">
+                    <i class="fa-solid fa-pen s-class" id="editar"></i>
+                    <i class="fa-solid fa-trash s-class" id="borrar"></i>
+                </div
+            </div>
         </div>
-        <div class="cont-box">
-            <div class="datos">
-                <h6>nombre</h6>
-                <h6>correo</h6>
-                <h6>rol</h6>
-            </div>
-            <div class="op-icon">
-                <i class="fa-solid fa-pen t-clas"></i>
-                <i class="fa-solid fa-trash t-clas"></i>  
-            </div>
         </div>
     </div>
 </body>
