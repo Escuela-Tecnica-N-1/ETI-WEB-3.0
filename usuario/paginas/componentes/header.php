@@ -27,7 +27,7 @@ $rolesHeader   = $usuarioHeader ? (array)($usuarioHeader['roles'] ?? []) : [];
 
                     <div class="menu-opciones" id="menuOpciones">
                         <?php if (in_array('admin', $rolesHeader)): ?>
-                            <a href="<?= BASE_URL ?>/adminqsy">
+                            <a href="<?= BASE_URL ?>\usuario\paginas\roles-admin\panel-administrador.php">
                                 <i class="fa-solid fa-user-shield"></i> Admin
                             </a>
                         <?php endif; ?>
@@ -38,15 +38,15 @@ $rolesHeader   = $usuarioHeader ? (array)($usuarioHeader['roles'] ?? []) : [];
                             </a>
                         <?php endif; ?>
 
-                        <?php if (in_array('alumno', $rolesHeader)): ?>
-                            <a href="<?= BASE_URL ?>/ns">
-                                <i class="fa-solid fa-user-graduate"></i> Alumnos
+                        <!-- <?php if (in_array('alumno', $rolesHeader)): ?>
+                            <a href="<?= BASE_URL ?>\usuario\paginas\conoceMas\conoceMas.php">
+                                <i class="fa-solid fa-user-graduate"></i> Alumnos 
                             </a>
-                        <?php endif; ?>
+                        <?php endif; ?>  PÁGINA DE ALUMNOS NO CREADA POR ESO SE ESTÁ COMENTADO ESTO  -->
 
-                        <a href="<?= BASE_URL ?>/configuracion">
+                        <!-- <a href="<?= BASE_URL ?>/configuracion">
                             <i class="fa-solid fa-gear"></i> Configuración
-                        </a>
+                        </a> NO EXISTE LA PÁGINA DEDICADA A LA CONFIGURACIÓN -->
 
                         <a href="#" id="btn-logout" class="opcion-cerrar">
                             <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
