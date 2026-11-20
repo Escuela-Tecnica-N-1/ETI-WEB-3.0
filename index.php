@@ -1,28 +1,7 @@
 <?php
 //tomi no toques esto es la base de todooo😣
 require_once __DIR__ . '/config/config.php';
-
-$usuario = null;
-
-if (!empty($_COOKIE['token'])) {
-    $token = $_COOKIE['token'];
-
-    $ch = curl_init('http://localhost:3000/api/me');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, [
-        'Cookie: token=' . $token
-    ]);
-
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
-
-    if ($httpCode === 200) {
-        $usuario = json_decode($response, true);
-    }
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,7 +9,6 @@ if (!empty($_COOKIE['token'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escuela Técnica</title>
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/styles.css">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/login.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/componentes/estadisticas.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/usuario/css/componentes/boton_mapa.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -40,85 +18,6 @@ if (!empty($_COOKIE['token'])) {
 </head>
 
 <body>
-
-    <?php if ($usuario): ?>
-    <!-- ─── Usuario logueado: menú de usuario ─────────────────────────────── -->
-        <div class="corner-fold" id="login-trigger">
-            <div class="fold"></div>
-            <div class="login-icon">
-                <i class="fas fa-user-lock"></i>
-            </div>
-        </div>
-
-    <!-- Login Modal -->
-        <div class="login-modal" id="login-modal">
-            <div class="login-container">
-                <button class="close-btn" id="close-login"><i class="fas fa-times"></i></button>
-                <div class="login-header">
-                    <h2>¡Hola, <?= htmlspecialchars($usuario['nombre']) ?>!</h2>
-                    <p><?= htmlspecialchars($usuario['email']) ?></p>
-                </div>
-                
-                <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px;">
-                    <a href="usuario/paginas/viewFuncionalidades/interfazProfe.php" style="text-decoration: none;">
-                        <button class="btn btn-primary" style="width: 100%;">
-                            <i class="fas fa-folder-open"></i>&nbsp; Acceder a la interfaz
-                        </button>
-                    </a>
-                    <button id="btnLogout" class="btn btn-outline" style="background-color: black; color: white;">
-                        <i class="fas fa-sign-out-alt"></i>&nbsp; Cerrar sesión
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-
-    <?php else: ?>
-        <!-- ─── No logueado: modal de login/registro ──────────────────────────── -->
-        <div class="corner-fold" id="login-trigger">
-            <div class="fold"></div>
-            <div class="login-icon">
-                <i class="fas fa-user-lock"></i>
-            </div>
-        </div>
-    
-        <div class="login-modal" id="login-modal">
-            <div class="login-container">
-                <button class="close-btn" id="close-login"><i class="fas fa-times"></i></button>
-                <div class="login-header">
-                    <h2>Acceso Docentes</h2>
-                    <p>Ingrese sus credenciales para acceder al panel</p>
-                </div>
-                <form id="auth-form">
-                    <input type="text" id="nombre" placeholder="Nombre" style="display: none;">
-                    <input type="email" id="email" placeholder="Email" required>
-                    <input type="password" id="password" placeholder="Contraseña" required>
-                    <button type="submit">Ingresar</button>
-                </form>
-                <div class="switch" id="toggle-form" onclick="logina()">
-                    <p>¿No tienes cuenta? Registrate</p>
-                </div>
-                <p id="mensaje"></p>
-
-                <!-- link para ir al formulario de recuperación -->
-                <div class="switch" id="toggle-forgot">
-                    <p>¿Olvidaste tu contraseña?</p>
-                </div>
-
-
-                <!-- formulario de "olvidé mi contraseña", oculto por defecto -->
-                <form id="forgot-form" style="display: none;">
-                    <input type="email" id="forgot-email" placeholder="Email" required>
-                    <button type="submit">Enviar link de recuperación</button>
-                </form>
-                <div class="switch" id="volver-login" style="display: none;">
-                    <p>Volver a iniciar sesión</p>
-                </div>
-                <p id="mensaje-forgot"></p>
-            </div>
-        </div>
-    
-    <?php endif; ?>
 
     <main>
         <!-- Welcome Section -->
@@ -260,12 +159,11 @@ if (!empty($_COOKIE['token'])) {
     </main>
 
 
-    <!--Script de noticias y login-->
+    <!--Script de noticias-->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <script src="usuario/script/login.js"></script>
-    <script src="usuario/script/servidor.js"></script>
+
     <script src="usuario/script/interfaz.js"></script>
 
     <script src="usuario/script/utility/parallax.js"></script>
