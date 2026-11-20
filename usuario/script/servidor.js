@@ -103,13 +103,14 @@ form.addEventListener('submit', async (e) => {
 
     if (data.success) {
       mensaje.textContent = esRegistro
-        ? 'Registro exitoso. Ahora puedes iniciar sesión.'
+        ? 'Registro exitoso.'
         : 'Inicio de sesión exitoso.';
       mensaje.style.color = 'green';
 
-      if (!esRegistro) {
-        window.location.reload();
-      }
+      // En ambos casos ya hay cookie de sesión: recargamos la página actual
+      // y el header se dibuja con la personita
+      button.disabled = true; // evita doble click mientras espera
+      setTimeout(() => window.location.reload(), 1000);
     } else {
       mensaje.textContent = data.message || 'Ocurrió un error.';
       mensaje.style.color = 'red';

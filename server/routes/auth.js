@@ -58,6 +58,8 @@ router.post('/register', async (req, res) => {
     const nuevoUser = new User(datosUsuario);
     await nuevoUser.save();
 
+    // Deja al usuario logueado apenas se registra
+    crearSesion(res, nuevoUser);
 
     res.status(201).json({ success: true, message: 'Registro exitoso.' });
   } catch (error) {
@@ -81,22 +83,8 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ success: false, message: 'Credenciales inválidas' });
     }
 
-    const token = jwt.sign(
-      {
-        id: usuario._id,
-        nombre: usuario.nombre,
-        email: usuario.email,
-        roles: usuario.roles
-      },
-      process.env.JWT_SECRET,
-      { expiresIn: '2h' }
-    );
-    res.cookie('token', token, { //El token entre ' ' es el nombre de la Cookie
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production', // solo HTTPS en prod, en dev funciona sin HTTPS
-      sameSite: 'Lax',
-      maxAge: 2 * 60 * 60 * 1000 // 2 horas en milisegundos, igual que el JWT
-    })
+    crearSesion(res, usuario);
+
     // console.log('Cookie seteada'); Para ver que si la cookie se setea
     res.json({ success: true, message: 'Login exitoso' });
   } catch (error) {
@@ -194,7 +182,7 @@ router.post('/logout', (req, res) => {
   res.clearCookie('token', {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'Strict'
+    sameSite: 'Lax'
   });
   res.json({ success: true, message: 'Sesión cerrada' });
 });
