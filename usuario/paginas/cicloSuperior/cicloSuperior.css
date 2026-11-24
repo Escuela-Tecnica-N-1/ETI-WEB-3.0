@@ -1,0 +1,155 @@
+:root {
+    --ciclo-superior-primary: #1976d2;
+    --ciclo-superior-secondary: #64b5f6;
+    --ciclo-superior-light: #e3f2fd;
+    --ciclo-superior-dark: #0d47a1;
+}
+
+.intro-section {
+    margin-top: 5px;
+    background: linear-gradient(
+        to right,
+        var(--ciclo-superior-dark),
+        var(--ciclo-superior-primary)
+    );
+    color: white;
+    padding: 3rem 0;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.intro-section .section-header h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.intro-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--ciclo-superior-dark);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--ciclo-superior-secondary);
+}
+
+.btn-blue {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-blue:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-amber {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-amber:hover {
+    background-color: var(--secondary-dark);
+}
+
+.modalities-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.modalities-section {
+    padding: 3rem 0;
+}
+
+.modality-card {
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: var(--bg-white);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: box-shadow 1s ease;
+}
+
+.modality-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.modality-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.modality-card p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.modality-card ul {
+    margin-bottom: 1.5rem;
+}
+
+.modality-card ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+
+.modality-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+}
+
+.informatica .modality-icon {
+    background-color: #dbeafe;
+    color: var(--primary-color);
+}
+
+.electromecanica .modality-icon {
+    background-color: #fef3c7;
+    background-color: var(--secondary-light);
+    color: var(--secondary-color);
+}
+
+
+@media (min-width: 768px) {
+
+    .intro-content {
+        max-width: 800px;
+    }
+
+    .modalities-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}

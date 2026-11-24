@@ -1,0 +1,204 @@
+ body{
+        display:flex;
+        flex-direction:row;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size:20px;
+        color:white;
+        background-color: #64748b;
+        align-content:center;
+    }
+    /*barra lateral y contenido*/
+    .sidebar{
+        width:20vw;
+        height:100vh;
+        background-color: #1d054b;
+        padding:10px;
+        border-radius:20px;  
+    }
+    .titulo{
+        display:flex;
+        flex-direction:row;
+        margin-bottom:10px;
+    }
+    .t-clas{
+        height:40px;
+        width:40px;
+        margin:5px;
+        padding:5px;
+        border-radius:5px;
+        font-size:25px;
+    }
+    .icono{
+        display:flex;
+        height:60px;
+        background-color: #0369a1; 
+        margin:5px;
+        padding:5px;
+        border-radius:5px;
+        font-size:50px;
+        color:white;
+    }
+    .enlaces{
+        text-decoration:none;
+        color:inherit;
+    }
+    .opciones{
+        display:flex;
+        flex-direction:row;
+        cursor:pointer;
+        transition: background-color 0.5s;
+        padding-left:10px;
+        border-radius:5px;
+        align-items:center;
+    }
+    .opciones:hover{
+        background-color: #0ea5e9;
+    }
+    .op-name{
+        display:flex;
+        height:40px;
+        width:40px;
+        align-items:center;
+        padding-left:10px;
+    }
+    .columna{
+        display:flex;
+        flex-direction:column;
+        height:100%;
+        width:100%;
+    }
+    .fila{
+        display:flex;
+        flex-direction:row;
+        margin:10px;
+    }
+    .usuario{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        width:40%;
+        background-color:rgb(89, 90, 86);
+    }
+    .cambios{
+        display:flex;
+        flex-direction:row;
+        width:10%;
+        justify-content:space-between;
+        background-color: rgb(119, 213, 244);
+    }
+    /*contenido y buscadores*/
+    .inicio{
+        width:80vw;
+        padding:20px;
+        font-size:30px;
+    }
+    .descripcion{
+        padding:10px;
+    }
+    /*conjunto. buscador y filtro de rol*/
+    .filtros{
+        display:flex;
+        flex-direction: row;
+        width:100%;
+        padding:20px;
+    }
+    /*filtro*/
+    .desp{
+        display:flex;
+        flex-direction:row;
+        padding-left:10px;
+    }
+    .dropdown{
+        width:140px;
+        height:40px;
+        font-size:16px;
+        border-radius:10px;
+        margin-left:20px;
+        margin-right:30px;
+    }
+    .dp-menu{
+        display:flex;
+        flex-direction:column;
+        position:absolute;
+        background-color:aliceblue;
+        box-shadow: 0px 0px 10px black;
+        border-radius:10px;
+        width:160px;
+        height:120px;
+        justify-content:center;
+    }
+    .drop-op{
+        width:100%;
+        text-align:center;
+        font-size:20px;
+        cursor:pointer;
+        color:grey;  
+    }
+    .drop-op:hover{
+        background-color: #0ea5e9;
+        color:white;
+    }
+
+    /*buscador*/
+    input{
+        border-radius:50px;
+        width:500px;
+        height:35px;
+        text-decoration-line: none;
+        font-size: 16px;
+        border:none;
+    }
+   /*Lista de Usuarios*/
+   .lista{
+        display:flex;
+        flex-direction:column;
+   }
+   /*titulo*/
+   .title{
+        display:flex;
+        flex-direction:row;
+        width:85%;
+        text-decoration:underline 5px;
+        text-underline-offset: 10px;
+        margin-bottom:15px;
+   }
+   .tit-1{
+        height:30px;
+        width:250px;
+   }
+   .tit-2{
+        width:350px;
+        height:30px;
+   }
+   .tit-3{
+        width:100px;
+        height:30px;
+   }
+   .cont-box{
+        display:flex;
+        flex-direction:row;
+   }
+   .d-user{
+        display:flex;
+        flex-direction:row;
+        width:70%;
+   }
+   .user{
+        margin-top:10px;
+        margin-bottom:10px;
+   }
+   .op-icon{
+        display:flex;
+        flex-direction:row;
+        width:100px;
+        margin-left:5px;
+        margin-right:5px;
+    }
+    .s-class{
+        display:inline-flex !important;
+        font-size:25px;
+        width:50px;
+        height:50px;
+        align-items:center;
+        justify-content:center;
+    }
